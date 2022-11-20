@@ -9,7 +9,7 @@
         public virtual ShipPurpose Purpose { get; set; }
         public virtual IList<CrewMember> Crew { get; protected set; }
         public virtual int[] Location { get; set; }
-        public virtual DateOnly OverhaulStartDate { get; set; }
+        public virtual DateTime OverhaulStartDate { get; set; }
         public virtual Cruise CurrentCruise { get; set; }
 
         public Ship()

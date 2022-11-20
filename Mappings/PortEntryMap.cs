@@ -7,8 +7,8 @@ namespace rpbd2.Mappings
         public PortEntryMap()
         {
             Id(x => x.Id);
-            Map(x => x.Port);
-            Map(x => x.Cruise);
+            References(x => x.Port);
+            References(x => x.Cruise);
             Map(x => x.DestinationPlanned);
             Map(x => x.DestinationActual);
             Map(x => x.DeparturePlanned);

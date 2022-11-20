@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Fluentnhibernate" Version="3.1.0" />
     <PackageReference Include="nhibernate" Version="5.3.14" />
+    <PackageReference Include="Npgsql" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

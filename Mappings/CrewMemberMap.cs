@@ -12,10 +12,10 @@ namespace rpbd2.Mappings
             Map(x => x.LastName);
             Map(x => x.Patronymic);
             Map(x => x.BirthDate);
-            Map(x => x.Role);
+            References(x => x.Role);
             Map(x => x.Experience);
             Map(x => x.Salary);
-            Map(x => x.CurrentShip);
+            References(x => x.CurrentShip);
         }
     }
 }

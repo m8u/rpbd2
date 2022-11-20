@@ -1,4 +1,4 @@
-﻿namespace rpbd2
+﻿namespace rpbd2.GUI
 {
     partial class MainWindow
     {
@@ -32,7 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cruisesGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.shipsGridView = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,8 +81,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.newMemberButton = new System.Windows.Forms.Button();
+            this.staffGridView = new System.Windows.Forms.DataGridView();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,8 +92,8 @@
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.editMemberButton = new System.Windows.Forms.Button();
+            this.removeMemberButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -105,8 +105,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.newChartererButton = new System.Windows.Forms.Button();
+            this.charterersGridView = new System.Windows.Forms.DataGridView();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,8 +117,8 @@
             this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.editChartererButton = new System.Windows.Forms.Button();
+            this.removeChartererButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -129,13 +129,30 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.chartererNameLabel = new System.Windows.Forms.Label();
+            this.chartererAddressLabel = new System.Windows.Forms.Label();
+            this.chartererPhoneNumberLabel = new System.Windows.Forms.Label();
+            this.chartererFaxLabel = new System.Windows.Forms.Label();
+            this.chartererEmailLabel = new System.Windows.Forms.Label();
+            this.chartererBankNameLabel = new System.Windows.Forms.Label();
+            this.chartererBankCityLabel = new System.Windows.Forms.Label();
+            this.chartererTINLabel = new System.Windows.Forms.Label();
+            this.chartererAccountNumberLabel = new System.Windows.Forms.Label();
+            this.memberFirstNameLabel = new System.Windows.Forms.Label();
+            this.memberLastNameLabel = new System.Windows.Forms.Label();
+            this.memberPatronymicLabel = new System.Windows.Forms.Label();
+            this.memberBirthDateLabel = new System.Windows.Forms.Label();
+            this.memberShipLabel = new System.Windows.Forms.Label();
+            this.memberRoleLabel = new System.Windows.Forms.Label();
+            this.memberExperienceLabel = new System.Windows.Forms.Label();
+            this.memberSalaryLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cruisesGridView)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -144,7 +161,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipsGridView)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -152,7 +169,7 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffGridView)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -160,7 +177,7 @@
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charterersGridView)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +196,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(861, 542);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -201,7 +219,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel1.Controls.Add(this.cruisesGridView);
             // 
             // splitContainer1.Panel2
             // 
@@ -223,48 +241,63 @@
             this.button1.Text = "New cruises...";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // cruisesGridView
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cruisesGridView.AllowUserToAddRows = false;
+            this.cruisesGridView.AllowUserToDeleteRows = false;
+            this.cruisesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cruisesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cruisesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(478, 473);
-            this.dataGridView1.TabIndex = 0;
+            this.cruisesGridView.Location = new System.Drawing.Point(3, 3);
+            this.cruisesGridView.MultiSelect = false;
+            this.cruisesGridView.Name = "cruisesGridView";
+            this.cruisesGridView.ReadOnly = true;
+            this.cruisesGridView.RowTemplate.Height = 25;
+            this.cruisesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cruisesGridView.Size = new System.Drawing.Size(478, 473);
+            this.cruisesGridView.TabIndex = 0;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Departure port";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Destination port";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Ship";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "General cargo";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Charterer";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // flowLayoutPanel1
             // 
@@ -308,6 +341,8 @@
             // 
             // dataGridView5
             // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
             this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -321,6 +356,7 @@
             this.Column35,
             this.Column36});
             this.dataGridView5.Location = new System.Drawing.Point(6, 96);
+            this.dataGridView5.MultiSelect = false;
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowTemplate.Height = 25;
             this.dataGridView5.Size = new System.Drawing.Size(350, 255);
@@ -330,41 +366,49 @@
             // 
             this.Column29.HeaderText = "Status";
             this.Column29.Name = "Column29";
+            this.Column29.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column30
             // 
             this.Column30.HeaderText = "Port";
             this.Column30.Name = "Column30";
+            this.Column30.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column31
             // 
             this.Column31.HeaderText = "Destination";
             this.Column31.Name = "Column31";
+            this.Column31.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column32
             // 
             this.Column32.HeaderText = "Destination (actual)";
             this.Column32.Name = "Column32";
+            this.Column32.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column33
             // 
             this.Column33.HeaderText = "Departure";
             this.Column33.Name = "Column33";
+            this.Column33.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column34
             // 
             this.Column34.HeaderText = "Departure (actual)";
             this.Column34.Name = "Column34";
+            this.Column34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column35
             // 
             this.Column35.HeaderText = "Destination delay reason";
             this.Column35.Name = "Column35";
+            this.Column35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column36
             // 
             this.Column36.HeaderText = "Departure delay reason";
             this.Column36.Name = "Column36";
+            this.Column36.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tableLayoutPanel1
             // 
@@ -455,7 +499,7 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.button2);
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
+            this.splitContainer2.Panel1.Controls.Add(this.shipsGridView);
             // 
             // splitContainer2.Panel2
             // 
@@ -464,7 +508,6 @@
             this.splitContainer2.Size = new System.Drawing.Size(847, 508);
             this.splitContainer2.SplitterDistance = 484;
             this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
             // button2
             // 
@@ -477,54 +520,71 @@
             this.button2.Text = "New ship...";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // shipsGridView
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.shipsGridView.AllowUserToAddRows = false;
+            this.shipsGridView.AllowUserToDeleteRows = false;
+            this.shipsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.shipsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.shipsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
             this.Column7,
             this.Column8,
             this.Column9,
             this.Column10,
             this.Column11});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(478, 470);
-            this.dataGridView2.TabIndex = 0;
+            this.shipsGridView.Location = new System.Drawing.Point(3, 3);
+            this.shipsGridView.MultiSelect = false;
+            this.shipsGridView.Name = "shipsGridView";
+            this.shipsGridView.ReadOnly = true;
+            this.shipsGridView.RowTemplate.Height = 25;
+            this.shipsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.shipsGridView.Size = new System.Drawing.Size(478, 470);
+            this.shipsGridView.TabIndex = 0;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Name";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Current cruise";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Carry capacity";
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Homeport";
             this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "Purpose";
             this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column11
             // 
             this.Column11.HeaderText = "Location";
             this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // flowLayoutPanel2
             // 
@@ -593,7 +653,6 @@
             this.label6.Size = new System.Drawing.Size(42, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "Name:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -677,8 +736,8 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.button3);
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridView3);
+            this.splitContainer3.Panel1.Controls.Add(this.newMemberButton);
+            this.splitContainer3.Panel1.Controls.Add(this.staffGridView);
             // 
             // splitContainer3.Panel2
             // 
@@ -688,24 +747,27 @@
             this.splitContainer3.SplitterDistance = 486;
             this.splitContainer3.TabIndex = 0;
             // 
-            // button3
+            // newMemberButton
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.newMemberButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(3, 488);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(480, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "New member...";
-            this.button3.UseVisualStyleBackColor = true;
+            this.newMemberButton.Location = new System.Drawing.Point(3, 488);
+            this.newMemberButton.Name = "newMemberButton";
+            this.newMemberButton.Size = new System.Drawing.Size(480, 23);
+            this.newMemberButton.TabIndex = 1;
+            this.newMemberButton.Text = "New member...";
+            this.newMemberButton.UseVisualStyleBackColor = true;
+            this.newMemberButton.Click += new System.EventHandler(this.newMemberButton_Click);
             // 
-            // dataGridView3
+            // staffGridView
             // 
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.staffGridView.AllowUserToAddRows = false;
+            this.staffGridView.AllowUserToDeleteRows = false;
+            this.staffGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.staffGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.staffGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column12,
             this.Column13,
             this.Column14,
@@ -714,81 +776,100 @@
             this.Column17,
             this.Column18,
             this.Column19});
-            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(480, 479);
-            this.dataGridView3.TabIndex = 0;
+            this.staffGridView.Location = new System.Drawing.Point(3, 3);
+            this.staffGridView.MultiSelect = false;
+            this.staffGridView.Name = "staffGridView";
+            this.staffGridView.ReadOnly = true;
+            this.staffGridView.RowTemplate.Height = 25;
+            this.staffGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.staffGridView.Size = new System.Drawing.Size(480, 479);
+            this.staffGridView.TabIndex = 0;
             // 
             // Column12
             // 
             this.Column12.HeaderText = "First name";
             this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column13
             // 
             this.Column13.HeaderText = "Last name";
             this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column14
             // 
             this.Column14.HeaderText = "Patronymic";
             this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column15
             // 
             this.Column15.HeaderText = "Birth date";
             this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column16
             // 
             this.Column16.HeaderText = "Ship";
             this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "Role";
             this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            this.Column17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "Experience";
             this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            this.Column18.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "Salary";
             this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            this.Column19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel3.Controls.Add(this.button10);
-            this.flowLayoutPanel3.Controls.Add(this.button11);
+            this.flowLayoutPanel3.Controls.Add(this.editMemberButton);
+            this.flowLayoutPanel3.Controls.Add(this.removeMemberButton);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 170);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(357, 341);
             this.flowLayoutPanel3.TabIndex = 3;
             // 
-            // button10
+            // editMemberButton
             // 
-            this.button10.Location = new System.Drawing.Point(279, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Edit...";
-            this.button10.UseVisualStyleBackColor = true;
+            this.editMemberButton.Location = new System.Drawing.Point(279, 3);
+            this.editMemberButton.Name = "editMemberButton";
+            this.editMemberButton.Size = new System.Drawing.Size(75, 23);
+            this.editMemberButton.TabIndex = 0;
+            this.editMemberButton.Text = "Edit...";
+            this.editMemberButton.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // removeMemberButton
             // 
-            this.button11.Location = new System.Drawing.Point(198, 3);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Remove";
-            this.button11.UseVisualStyleBackColor = true;
+            this.removeMemberButton.Location = new System.Drawing.Point(198, 3);
+            this.removeMemberButton.Name = "removeMemberButton";
+            this.removeMemberButton.Size = new System.Drawing.Size(75, 23);
+            this.removeMemberButton.TabIndex = 1;
+            this.removeMemberButton.Text = "Remove";
+            this.removeMemberButton.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -805,6 +886,14 @@
             this.tableLayoutPanel3.Controls.Add(this.label19, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.label20, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.label21, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.memberFirstNameLabel, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.memberLastNameLabel, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.memberPatronymicLabel, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.memberBirthDateLabel, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.memberShipLabel, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.memberRoleLabel, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.memberExperienceLabel, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.memberSalaryLabel, 1, 7);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
@@ -827,7 +916,6 @@
             this.label14.Size = new System.Drawing.Size(65, 15);
             this.label14.TabIndex = 0;
             this.label14.Text = "First name:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label15
             // 
@@ -911,8 +999,8 @@
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.button4);
-            this.splitContainer4.Panel1.Controls.Add(this.dataGridView4);
+            this.splitContainer4.Panel1.Controls.Add(this.newChartererButton);
+            this.splitContainer4.Panel1.Controls.Add(this.charterersGridView);
             // 
             // splitContainer4.Panel2
             // 
@@ -922,22 +1010,25 @@
             this.splitContainer4.SplitterDistance = 487;
             this.splitContainer4.TabIndex = 0;
             // 
-            // button4
+            // newChartererButton
             // 
-            this.button4.Location = new System.Drawing.Point(3, 488);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(481, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "New charterer...";
-            this.button4.UseVisualStyleBackColor = true;
+            this.newChartererButton.Location = new System.Drawing.Point(3, 488);
+            this.newChartererButton.Name = "newChartererButton";
+            this.newChartererButton.Size = new System.Drawing.Size(481, 23);
+            this.newChartererButton.TabIndex = 2;
+            this.newChartererButton.Text = "New charterer...";
+            this.newChartererButton.UseVisualStyleBackColor = true;
+            this.newChartererButton.Click += new System.EventHandler(this.newChartererButton_Click);
             // 
-            // dataGridView4
+            // charterersGridView
             // 
-            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.charterersGridView.AllowUserToAddRows = false;
+            this.charterersGridView.AllowUserToDeleteRows = false;
+            this.charterersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.charterersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.charterersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column20,
             this.Column21,
             this.Column22,
@@ -947,86 +1038,110 @@
             this.Column26,
             this.Column27,
             this.Column28});
-            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(481, 479);
-            this.dataGridView4.TabIndex = 1;
+            this.charterersGridView.Location = new System.Drawing.Point(3, 3);
+            this.charterersGridView.MultiSelect = false;
+            this.charterersGridView.Name = "charterersGridView";
+            this.charterersGridView.ReadOnly = true;
+            this.charterersGridView.RowTemplate.Height = 25;
+            this.charterersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.charterersGridView.Size = new System.Drawing.Size(481, 479);
+            this.charterersGridView.TabIndex = 1;
+            this.charterersGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.charterersGridView_CellMouseClick);
             // 
             // Column20
             // 
             this.Column20.HeaderText = "Name";
             this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column21
             // 
             this.Column21.HeaderText = "Address";
             this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
+            this.Column21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column22
             // 
             this.Column22.HeaderText = "Phone number";
             this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
+            this.Column22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column23
             // 
             this.Column23.HeaderText = "Fax";
             this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
+            this.Column23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column24
             // 
             this.Column24.HeaderText = "Email";
             this.Column24.Name = "Column24";
+            this.Column24.ReadOnly = true;
+            this.Column24.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column25
             // 
             this.Column25.HeaderText = "Bank name";
             this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            this.Column25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column26
             // 
             this.Column26.HeaderText = "City";
             this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            this.Column26.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column27
             // 
             this.Column27.HeaderText = "TIN";
             this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            this.Column27.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column28
             // 
             this.Column28.HeaderText = "Account number";
             this.Column28.Name = "Column28";
+            this.Column28.ReadOnly = true;
+            this.Column28.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel4.Controls.Add(this.button12);
-            this.flowLayoutPanel4.Controls.Add(this.button13);
+            this.flowLayoutPanel4.Controls.Add(this.editChartererButton);
+            this.flowLayoutPanel4.Controls.Add(this.removeChartererButton);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(6, 192);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(353, 319);
             this.flowLayoutPanel4.TabIndex = 4;
             // 
-            // button12
+            // editChartererButton
             // 
-            this.button12.Location = new System.Drawing.Point(275, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 0;
-            this.button12.Text = "Edit...";
-            this.button12.UseVisualStyleBackColor = true;
+            this.editChartererButton.Location = new System.Drawing.Point(275, 3);
+            this.editChartererButton.Name = "editChartererButton";
+            this.editChartererButton.Size = new System.Drawing.Size(75, 23);
+            this.editChartererButton.TabIndex = 0;
+            this.editChartererButton.Text = "Edit...";
+            this.editChartererButton.UseVisualStyleBackColor = true;
+            this.editChartererButton.Click += new System.EventHandler(this.editChartererButton_Click);
             // 
-            // button13
+            // removeChartererButton
             // 
-            this.button13.Location = new System.Drawing.Point(194, 3);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "Remove";
-            this.button13.UseVisualStyleBackColor = true;
+            this.removeChartererButton.Location = new System.Drawing.Point(194, 3);
+            this.removeChartererButton.Name = "removeChartererButton";
+            this.removeChartererButton.Size = new System.Drawing.Size(75, 23);
+            this.removeChartererButton.TabIndex = 1;
+            this.removeChartererButton.Text = "Remove";
+            this.removeChartererButton.UseVisualStyleBackColor = true;
+            this.removeChartererButton.Click += new System.EventHandler(this.removeChartererButton_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -1044,6 +1159,15 @@
             this.tableLayoutPanel4.Controls.Add(this.label28, 0, 6);
             this.tableLayoutPanel4.Controls.Add(this.label29, 0, 7);
             this.tableLayoutPanel4.Controls.Add(this.label30, 0, 8);
+            this.tableLayoutPanel4.Controls.Add(this.chartererNameLabel, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.chartererAddressLabel, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.chartererPhoneNumberLabel, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.chartererFaxLabel, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.chartererEmailLabel, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.chartererBankNameLabel, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.chartererBankCityLabel, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.chartererTINLabel, 1, 7);
+            this.tableLayoutPanel4.Controls.Add(this.chartererAccountNumberLabel, 1, 8);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 9;
@@ -1140,6 +1264,159 @@
             this.label30.TabIndex = 8;
             this.label30.Text = "Account number:";
             // 
+            // chartererNameLabel
+            // 
+            this.chartererNameLabel.AutoSize = true;
+            this.chartererNameLabel.Location = new System.Drawing.Point(109, 0);
+            this.chartererNameLabel.Name = "chartererNameLabel";
+            this.chartererNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererNameLabel.TabIndex = 9;
+            this.chartererNameLabel.Text = "-";
+            // 
+            // chartererAddressLabel
+            // 
+            this.chartererAddressLabel.AutoSize = true;
+            this.chartererAddressLabel.Location = new System.Drawing.Point(109, 15);
+            this.chartererAddressLabel.Name = "chartererAddressLabel";
+            this.chartererAddressLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererAddressLabel.TabIndex = 10;
+            this.chartererAddressLabel.Text = "-";
+            // 
+            // chartererPhoneNumberLabel
+            // 
+            this.chartererPhoneNumberLabel.AutoSize = true;
+            this.chartererPhoneNumberLabel.Location = new System.Drawing.Point(109, 30);
+            this.chartererPhoneNumberLabel.Name = "chartererPhoneNumberLabel";
+            this.chartererPhoneNumberLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererPhoneNumberLabel.TabIndex = 11;
+            this.chartererPhoneNumberLabel.Text = "-";
+            // 
+            // chartererFaxLabel
+            // 
+            this.chartererFaxLabel.AutoSize = true;
+            this.chartererFaxLabel.Location = new System.Drawing.Point(109, 45);
+            this.chartererFaxLabel.Name = "chartererFaxLabel";
+            this.chartererFaxLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererFaxLabel.TabIndex = 12;
+            this.chartererFaxLabel.Text = "-";
+            // 
+            // chartererEmailLabel
+            // 
+            this.chartererEmailLabel.AutoSize = true;
+            this.chartererEmailLabel.Location = new System.Drawing.Point(109, 60);
+            this.chartererEmailLabel.Name = "chartererEmailLabel";
+            this.chartererEmailLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererEmailLabel.TabIndex = 13;
+            this.chartererEmailLabel.Text = "-";
+            // 
+            // chartererBankNameLabel
+            // 
+            this.chartererBankNameLabel.AutoSize = true;
+            this.chartererBankNameLabel.Location = new System.Drawing.Point(109, 75);
+            this.chartererBankNameLabel.Name = "chartererBankNameLabel";
+            this.chartererBankNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererBankNameLabel.TabIndex = 14;
+            this.chartererBankNameLabel.Text = "-";
+            // 
+            // chartererBankCityLabel
+            // 
+            this.chartererBankCityLabel.AutoSize = true;
+            this.chartererBankCityLabel.Location = new System.Drawing.Point(109, 90);
+            this.chartererBankCityLabel.Name = "chartererBankCityLabel";
+            this.chartererBankCityLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererBankCityLabel.TabIndex = 15;
+            this.chartererBankCityLabel.Text = "-";
+            // 
+            // chartererTINLabel
+            // 
+            this.chartererTINLabel.AutoSize = true;
+            this.chartererTINLabel.Location = new System.Drawing.Point(109, 105);
+            this.chartererTINLabel.Name = "chartererTINLabel";
+            this.chartererTINLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererTINLabel.TabIndex = 16;
+            this.chartererTINLabel.Text = "-";
+            // 
+            // chartererAccountNumberLabel
+            // 
+            this.chartererAccountNumberLabel.AutoSize = true;
+            this.chartererAccountNumberLabel.Location = new System.Drawing.Point(109, 120);
+            this.chartererAccountNumberLabel.Name = "chartererAccountNumberLabel";
+            this.chartererAccountNumberLabel.Size = new System.Drawing.Size(12, 15);
+            this.chartererAccountNumberLabel.TabIndex = 17;
+            this.chartererAccountNumberLabel.Text = "-";
+            // 
+            // memberFirstNameLabel
+            // 
+            this.memberFirstNameLabel.AutoSize = true;
+            this.memberFirstNameLabel.Location = new System.Drawing.Point(80, 0);
+            this.memberFirstNameLabel.Name = "memberFirstNameLabel";
+            this.memberFirstNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberFirstNameLabel.TabIndex = 8;
+            this.memberFirstNameLabel.Text = "-";
+            // 
+            // memberLastNameLabel
+            // 
+            this.memberLastNameLabel.AutoSize = true;
+            this.memberLastNameLabel.Location = new System.Drawing.Point(80, 15);
+            this.memberLastNameLabel.Name = "memberLastNameLabel";
+            this.memberLastNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberLastNameLabel.TabIndex = 9;
+            this.memberLastNameLabel.Text = "-";
+            // 
+            // memberPatronymicLabel
+            // 
+            this.memberPatronymicLabel.AutoSize = true;
+            this.memberPatronymicLabel.Location = new System.Drawing.Point(80, 30);
+            this.memberPatronymicLabel.Name = "memberPatronymicLabel";
+            this.memberPatronymicLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberPatronymicLabel.TabIndex = 10;
+            this.memberPatronymicLabel.Text = "-";
+            // 
+            // memberBirthDateLabel
+            // 
+            this.memberBirthDateLabel.AutoSize = true;
+            this.memberBirthDateLabel.Location = new System.Drawing.Point(80, 45);
+            this.memberBirthDateLabel.Name = "memberBirthDateLabel";
+            this.memberBirthDateLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberBirthDateLabel.TabIndex = 11;
+            this.memberBirthDateLabel.Text = "-";
+            // 
+            // memberShipLabel
+            // 
+            this.memberShipLabel.AutoSize = true;
+            this.memberShipLabel.Location = new System.Drawing.Point(80, 60);
+            this.memberShipLabel.Name = "memberShipLabel";
+            this.memberShipLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberShipLabel.TabIndex = 12;
+            this.memberShipLabel.Text = "-";
+            // 
+            // memberRoleLabel
+            // 
+            this.memberRoleLabel.AutoSize = true;
+            this.memberRoleLabel.Location = new System.Drawing.Point(80, 75);
+            this.memberRoleLabel.Name = "memberRoleLabel";
+            this.memberRoleLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberRoleLabel.TabIndex = 13;
+            this.memberRoleLabel.Text = "-";
+            // 
+            // memberExperienceLabel
+            // 
+            this.memberExperienceLabel.AutoSize = true;
+            this.memberExperienceLabel.Location = new System.Drawing.Point(80, 90);
+            this.memberExperienceLabel.Name = "memberExperienceLabel";
+            this.memberExperienceLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberExperienceLabel.TabIndex = 14;
+            this.memberExperienceLabel.Text = "-";
+            // 
+            // memberSalaryLabel
+            // 
+            this.memberSalaryLabel.AutoSize = true;
+            this.memberSalaryLabel.Location = new System.Drawing.Point(80, 105);
+            this.memberSalaryLabel.Name = "memberSalaryLabel";
+            this.memberSalaryLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberSalaryLabel.TabIndex = 15;
+            this.memberSalaryLabel.Text = "-";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1147,14 +1424,14 @@
             this.ClientSize = new System.Drawing.Size(885, 566);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "rpbd2";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cruisesGridView)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1164,7 +1441,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipsGridView)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -1173,7 +1450,7 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffGridView)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -1182,7 +1459,7 @@
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charterersGridView)).EndInit();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -1197,46 +1474,18 @@
         private TabPage tabPage2;
         private SplitContainer splitContainer1;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView cruisesGridView;
         private SplitContainer splitContainer2;
         private TabPage tabPage3;
         private SplitContainer splitContainer3;
         private TabPage tabPage4;
         private SplitContainer splitContainer4;
         private Button button2;
-        private DataGridView dataGridView2;
-        private Button button3;
-        private DataGridView dataGridView3;
-        private DataGridView dataGridView4;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
-        private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn Column14;
-        private DataGridViewTextBoxColumn Column15;
-        private DataGridViewTextBoxColumn Column16;
-        private DataGridViewTextBoxColumn Column17;
-        private DataGridViewTextBoxColumn Column18;
-        private DataGridViewTextBoxColumn Column19;
-        private Button button4;
-        private DataGridViewTextBoxColumn Column20;
-        private DataGridViewTextBoxColumn Column21;
-        private DataGridViewTextBoxColumn Column22;
-        private DataGridViewTextBoxColumn Column23;
-        private DataGridViewTextBoxColumn Column24;
-        private DataGridViewTextBoxColumn Column25;
-        private DataGridViewTextBoxColumn Column26;
-        private DataGridViewTextBoxColumn Column27;
-        private DataGridViewTextBoxColumn Column28;
+        private DataGridView shipsGridView;
+        private Button newMemberButton;
+        private DataGridView staffGridView;
+        private DataGridView charterersGridView;
+        private Button newChartererButton;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
         private Label label2;
@@ -1276,6 +1525,20 @@
         private Button button5;
         private Button button6;
         private DataGridView dataGridView5;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Button button8;
+        private Button button9;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Button editMemberButton;
+        private Button removeMemberButton;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private Button editChartererButton;
+        private Button removeChartererButton;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column29;
         private DataGridViewTextBoxColumn Column30;
         private DataGridViewTextBoxColumn Column31;
@@ -1284,14 +1547,45 @@
         private DataGridViewTextBoxColumn Column34;
         private DataGridViewTextBoxColumn Column35;
         private DataGridViewTextBoxColumn Column36;
-        private FlowLayoutPanel flowLayoutPanel2;
-        private Button button8;
-        private Button button9;
-        private FlowLayoutPanel flowLayoutPanel3;
-        private Button button10;
-        private Button button11;
-        private FlowLayoutPanel flowLayoutPanel4;
-        private Button button12;
-        private Button button13;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column12;
+        private DataGridViewTextBoxColumn Column13;
+        private DataGridViewTextBoxColumn Column14;
+        private DataGridViewTextBoxColumn Column15;
+        private DataGridViewTextBoxColumn Column16;
+        private DataGridViewTextBoxColumn Column17;
+        private DataGridViewTextBoxColumn Column18;
+        private DataGridViewTextBoxColumn Column19;
+        private DataGridViewTextBoxColumn Column20;
+        private DataGridViewTextBoxColumn Column21;
+        private DataGridViewTextBoxColumn Column22;
+        private DataGridViewTextBoxColumn Column23;
+        private DataGridViewTextBoxColumn Column24;
+        private DataGridViewTextBoxColumn Column25;
+        private DataGridViewTextBoxColumn Column26;
+        private DataGridViewTextBoxColumn Column27;
+        private DataGridViewTextBoxColumn Column28;
+        private Label chartererNameLabel;
+        private Label chartererAddressLabel;
+        private Label chartererPhoneNumberLabel;
+        private Label chartererFaxLabel;
+        private Label chartererEmailLabel;
+        private Label chartererBankNameLabel;
+        private Label chartererBankCityLabel;
+        private Label chartererTINLabel;
+        private Label chartererAccountNumberLabel;
+        private Label memberFirstNameLabel;
+        private Label memberLastNameLabel;
+        private Label memberPatronymicLabel;
+        private Label memberBirthDateLabel;
+        private Label memberShipLabel;
+        private Label memberRoleLabel;
+        private Label memberExperienceLabel;
+        private Label memberSalaryLabel;
     }
 }
