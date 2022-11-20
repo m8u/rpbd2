@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace rpbd2.Entities
+﻿namespace rpbd2.Entities
 {
     public class Ship
     {
@@ -16,7 +10,23 @@ namespace rpbd2.Entities
         public virtual IList<CrewMember> Crew { get; protected set; }
         public virtual int[] Location { get; set; }
         public virtual DateOnly OverhaulStartDate { get; set; }
+        public virtual Cruise CurrentCruise { get; set; }
 
-        // public Cruise getCurrentCruise()
+        public Ship()
+        {
+            Crew = new List<CrewMember>();
+        }
+
+        public virtual void AddCrewMember(CrewMember member)
+        {
+            member.CurrentShip = this;
+            Crew.Add(member);
+        }
+
+        public virtual void RemoveCrewMember(CrewMember member)
+        {
+            member.CurrentShip = null;
+            Crew.Remove(member); 
+        }
     }
 }

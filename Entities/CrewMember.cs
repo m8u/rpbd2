@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace rpbd2.Entities
+﻿namespace rpbd2.Entities
 {
     public class CrewMember
     {
@@ -16,5 +10,6 @@ namespace rpbd2.Entities
         public virtual Role Role { get; set; }
         public virtual int Experience { get; set; }
         public virtual int Salary { get; set; }
+        public virtual Ship? CurrentShip { get; set; }
     }
 }

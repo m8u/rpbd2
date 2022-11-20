@@ -13,8 +13,4 @@
     <PackageReference Include="nhibernate" Version="5.3.14" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
-
 </Project>

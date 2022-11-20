@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace rpbd2.Entities
+﻿namespace rpbd2.Entities
 {
     public class Charterer
     {
@@ -18,5 +12,6 @@ namespace rpbd2.Entities
         public virtual string BankCity { get; set; }
         public virtual string BankTIN { get; set; }
         public virtual string BankAccountNumber { get; set; }
+        public virtual IList<Cruise> Cruises { get; protected set; }
     }
 }
