@@ -56,6 +56,15 @@ namespace rpbd2
             return session.CreateQuery("from " + tableName).List();
         }
 
+        public void Save(object obj)
+        {
+            using (var transaction = session.BeginTransaction())
+            {
+                session.Save(obj);
+                transaction.Commit();
+            }
+        }
+
         public void Delete(object obj)
         {
             using (var transaction = session.BeginTransaction()) 

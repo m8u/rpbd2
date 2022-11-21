@@ -12,6 +12,9 @@
             this.mainWindow = mainWindow;
             this.member = member;
 
+            foreach (var role in mainWindow.roles)
+                roleComboBox.Items.Add(role.Name);
+
             if (member == null)
             {
                 Text = "New member";
@@ -35,6 +38,7 @@
             {
                 mainWindow.members.Add(new Entities.CrewMember());
                 member = mainWindow.members.LastOrDefault();
+                DB.getInstance().Save(member);
             }
             member.FirstName = firstNameTextBox.Text;
             member.LastName = lastNameTextBox.Text;

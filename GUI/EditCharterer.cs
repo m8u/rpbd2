@@ -45,18 +45,20 @@ namespace rpbd2.GUI
             {
                 mainWindow.charterers.Add(new Entities.Charterer());
                 charterer = mainWindow.charterers.LastOrDefault();
+                DB.getInstance().Save(charterer);
+            } else
+            {
+                charterer.Name = nameTextBox.Text;
+                charterer.Address = addressTextBox.Text;
+                charterer.PhoneNumber = phoneNumberTextBox.Text;
+                charterer.Fax = faxTextBox.Text;
+                charterer.Email = emailTextBox.Text;
+                charterer.BankName = bankNameTextBox.Text;
+                charterer.BankCity = bankCityTextBox.Text;
+                charterer.BankTIN = tinTextBox.Text;
+                charterer.BankAccountNumber = accountNumberTextBox.Text;
+                DB.getInstance().FlushAsync();
             }
-            charterer.Name = nameTextBox.Text;
-            charterer.Address = addressTextBox.Text;
-            charterer.PhoneNumber = phoneNumberTextBox.Text;
-            charterer.Fax = faxTextBox.Text;
-            charterer.Email = emailTextBox.Text;
-            charterer.BankName = bankNameTextBox.Text;
-            charterer.BankCity = bankCityTextBox.Text;
-            charterer.BankTIN = tinTextBox.Text;
-            charterer.BankAccountNumber = accountNumberTextBox.Text;
-
-            DB.getInstance().FlushAsync();
 
             Close();
         }

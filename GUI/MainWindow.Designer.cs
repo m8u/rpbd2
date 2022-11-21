@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.newCruiseButton = new System.Windows.Forms.Button();
             this.cruisesGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,10 +39,10 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.updateRoutePointButton = new System.Windows.Forms.Button();
+            this.editCruiseButton = new System.Windows.Forms.Button();
+            this.removeCruiseButton = new System.Windows.Forms.Button();
+            this.routePointsGridView = new System.Windows.Forms.DataGridView();
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +57,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.cruiseDeparturePortLabel = new System.Windows.Forms.Label();
+            this.cruiseDestinationPortLabel = new System.Windows.Forms.Label();
+            this.cruiseShipLabel = new System.Windows.Forms.Label();
+            this.cruiseGeneralCargoLabel = new System.Windows.Forms.Label();
+            this.cruiseChartererLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.button2 = new System.Windows.Forms.Button();
+            this.newShipButton = new System.Windows.Forms.Button();
             this.shipsGridView = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,9 +72,10 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.editShipButton = new System.Windows.Forms.Button();
+            this.removeShipButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -79,6 +85,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.shipNameLabel = new System.Windows.Forms.Label();
+            this.shipCruiseLabel = new System.Windows.Forms.Label();
+            this.shipCarryCapacityLabel = new System.Windows.Forms.Label();
+            this.shipHomeportLabel = new System.Windows.Forms.Label();
+            this.shipPurposeLabel = new System.Windows.Forms.Label();
+            this.shipCrewLabel = new System.Windows.Forms.Label();
+            this.shipLocationLabel = new System.Windows.Forms.Label();
+            this.shipOverhaulStartDateLabel = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.newMemberButton = new System.Windows.Forms.Button();
@@ -103,6 +117,14 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.memberFirstNameLabel = new System.Windows.Forms.Label();
+            this.memberLastNameLabel = new System.Windows.Forms.Label();
+            this.memberPatronymicLabel = new System.Windows.Forms.Label();
+            this.memberBirthDateLabel = new System.Windows.Forms.Label();
+            this.memberShipLabel = new System.Windows.Forms.Label();
+            this.memberRoleLabel = new System.Windows.Forms.Label();
+            this.memberExperienceLabel = new System.Windows.Forms.Label();
+            this.memberSalaryLabel = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.newChartererButton = new System.Windows.Forms.Button();
@@ -138,14 +160,10 @@
             this.chartererBankCityLabel = new System.Windows.Forms.Label();
             this.chartererTINLabel = new System.Windows.Forms.Label();
             this.chartererAccountNumberLabel = new System.Windows.Forms.Label();
-            this.memberFirstNameLabel = new System.Windows.Forms.Label();
-            this.memberLastNameLabel = new System.Windows.Forms.Label();
-            this.memberPatronymicLabel = new System.Windows.Forms.Label();
-            this.memberBirthDateLabel = new System.Windows.Forms.Label();
-            this.memberShipLabel = new System.Windows.Forms.Label();
-            this.memberRoleLabel = new System.Windows.Forms.Label();
-            this.memberExperienceLabel = new System.Windows.Forms.Label();
-            this.memberSalaryLabel = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.miscGridView = new System.Windows.Forms.DataGridView();
+            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miscComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -154,7 +172,7 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cruisesGridView)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routePointsGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -180,6 +198,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.charterersGridView)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.miscGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -191,8 +211,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(861, 542);
             this.tabControl1.TabIndex = 0;
@@ -218,28 +241,31 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.newCruiseButton);
             this.splitContainer1.Panel1.Controls.Add(this.cruisesGridView);
+            this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView5);
+            this.splitContainer1.Panel2.Controls.Add(this.routePointsGridView);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Size = new System.Drawing.Size(847, 508);
             this.splitContainer1.SplitterDistance = 484;
             this.splitContainer1.TabIndex = 0;
             // 
-            // button1
+            // newCruiseButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.newCruiseButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(3, 482);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(478, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "New cruises...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.newCruiseButton.Location = new System.Drawing.Point(3, 482);
+            this.newCruiseButton.Name = "newCruiseButton";
+            this.newCruiseButton.Size = new System.Drawing.Size(478, 23);
+            this.newCruiseButton.TabIndex = 1;
+            this.newCruiseButton.Text = "New cruise...";
+            this.newCruiseButton.UseVisualStyleBackColor = true;
+            this.newCruiseButton.Click += new System.EventHandler(this.newCruiseButton_Click);
             // 
             // cruisesGridView
             // 
@@ -248,6 +274,7 @@
             this.cruisesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cruisesGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.cruisesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cruisesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -263,6 +290,7 @@
             this.cruisesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cruisesGridView.Size = new System.Drawing.Size(478, 473);
             this.cruisesGridView.TabIndex = 0;
+            this.cruisesGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.cruisesGridView_CellMouseClick);
             // 
             // Column1
             // 
@@ -303,50 +331,52 @@
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.updateRoutePointButton);
+            this.flowLayoutPanel1.Controls.Add(this.editCruiseButton);
+            this.flowLayoutPanel1.Controls.Add(this.removeCruiseButton);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 357);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(350, 148);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // button7
+            // updateRoutePointButton
             // 
-            this.button7.Location = new System.Drawing.Point(205, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(142, 23);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Update route point...";
-            this.button7.UseVisualStyleBackColor = true;
+            this.updateRoutePointButton.Location = new System.Drawing.Point(205, 3);
+            this.updateRoutePointButton.Name = "updateRoutePointButton";
+            this.updateRoutePointButton.Size = new System.Drawing.Size(142, 23);
+            this.updateRoutePointButton.TabIndex = 2;
+            this.updateRoutePointButton.Text = "Update route point...";
+            this.updateRoutePointButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // editCruiseButton
             // 
-            this.button5.Location = new System.Drawing.Point(124, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Edit...";
-            this.button5.UseVisualStyleBackColor = true;
+            this.editCruiseButton.Location = new System.Drawing.Point(124, 3);
+            this.editCruiseButton.Name = "editCruiseButton";
+            this.editCruiseButton.Size = new System.Drawing.Size(75, 23);
+            this.editCruiseButton.TabIndex = 0;
+            this.editCruiseButton.Text = "Edit...";
+            this.editCruiseButton.UseVisualStyleBackColor = true;
+            this.editCruiseButton.Click += new System.EventHandler(this.editCruiseButton_Click);
             // 
-            // button6
+            // removeCruiseButton
             // 
-            this.button6.Location = new System.Drawing.Point(43, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Remove";
-            this.button6.UseVisualStyleBackColor = true;
+            this.removeCruiseButton.Location = new System.Drawing.Point(43, 3);
+            this.removeCruiseButton.Name = "removeCruiseButton";
+            this.removeCruiseButton.Size = new System.Drawing.Size(75, 23);
+            this.removeCruiseButton.TabIndex = 1;
+            this.removeCruiseButton.Text = "Remove";
+            this.removeCruiseButton.UseVisualStyleBackColor = true;
+            this.removeCruiseButton.Click += new System.EventHandler(this.removeCruiseButton_Click);
             // 
-            // dataGridView5
+            // routePointsGridView
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.routePointsGridView.AllowUserToAddRows = false;
+            this.routePointsGridView.AllowUserToDeleteRows = false;
+            this.routePointsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.routePointsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.routePointsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column29,
             this.Column30,
             this.Column31,
@@ -355,12 +385,12 @@
             this.Column34,
             this.Column35,
             this.Column36});
-            this.dataGridView5.Location = new System.Drawing.Point(6, 96);
-            this.dataGridView5.MultiSelect = false;
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowTemplate.Height = 25;
-            this.dataGridView5.Size = new System.Drawing.Size(350, 255);
-            this.dataGridView5.TabIndex = 1;
+            this.routePointsGridView.Location = new System.Drawing.Point(6, 96);
+            this.routePointsGridView.MultiSelect = false;
+            this.routePointsGridView.Name = "routePointsGridView";
+            this.routePointsGridView.RowTemplate.Height = 25;
+            this.routePointsGridView.Size = new System.Drawing.Size(350, 255);
+            this.routePointsGridView.TabIndex = 1;
             // 
             // Column29
             // 
@@ -422,6 +452,11 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cruiseDeparturePortLabel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cruiseDestinationPortLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cruiseShipLabel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cruiseGeneralCargoLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cruiseChartererLabel, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -478,6 +513,51 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Charterer:";
             // 
+            // cruiseDeparturePortLabel
+            // 
+            this.cruiseDeparturePortLabel.AutoSize = true;
+            this.cruiseDeparturePortLabel.Location = new System.Drawing.Point(104, 0);
+            this.cruiseDeparturePortLabel.Name = "cruiseDeparturePortLabel";
+            this.cruiseDeparturePortLabel.Size = new System.Drawing.Size(12, 15);
+            this.cruiseDeparturePortLabel.TabIndex = 5;
+            this.cruiseDeparturePortLabel.Text = "-";
+            // 
+            // cruiseDestinationPortLabel
+            // 
+            this.cruiseDestinationPortLabel.AutoSize = true;
+            this.cruiseDestinationPortLabel.Location = new System.Drawing.Point(104, 15);
+            this.cruiseDestinationPortLabel.Name = "cruiseDestinationPortLabel";
+            this.cruiseDestinationPortLabel.Size = new System.Drawing.Size(12, 15);
+            this.cruiseDestinationPortLabel.TabIndex = 6;
+            this.cruiseDestinationPortLabel.Text = "-";
+            // 
+            // cruiseShipLabel
+            // 
+            this.cruiseShipLabel.AutoSize = true;
+            this.cruiseShipLabel.Location = new System.Drawing.Point(104, 30);
+            this.cruiseShipLabel.Name = "cruiseShipLabel";
+            this.cruiseShipLabel.Size = new System.Drawing.Size(12, 15);
+            this.cruiseShipLabel.TabIndex = 7;
+            this.cruiseShipLabel.Text = "-";
+            // 
+            // cruiseGeneralCargoLabel
+            // 
+            this.cruiseGeneralCargoLabel.AutoSize = true;
+            this.cruiseGeneralCargoLabel.Location = new System.Drawing.Point(104, 45);
+            this.cruiseGeneralCargoLabel.Name = "cruiseGeneralCargoLabel";
+            this.cruiseGeneralCargoLabel.Size = new System.Drawing.Size(12, 15);
+            this.cruiseGeneralCargoLabel.TabIndex = 8;
+            this.cruiseGeneralCargoLabel.Text = "-";
+            // 
+            // cruiseChartererLabel
+            // 
+            this.cruiseChartererLabel.AutoSize = true;
+            this.cruiseChartererLabel.Location = new System.Drawing.Point(104, 60);
+            this.cruiseChartererLabel.Name = "cruiseChartererLabel";
+            this.cruiseChartererLabel.Size = new System.Drawing.Size(12, 15);
+            this.cruiseChartererLabel.TabIndex = 9;
+            this.cruiseChartererLabel.Text = "-";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer2);
@@ -498,27 +578,30 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.button2);
+            this.splitContainer2.Panel1.Controls.Add(this.newShipButton);
             this.splitContainer2.Panel1.Controls.Add(this.shipsGridView);
+            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel2);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
+            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer2.Size = new System.Drawing.Size(847, 508);
             this.splitContainer2.SplitterDistance = 484;
             this.splitContainer2.TabIndex = 0;
             // 
-            // button2
+            // newShipButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.newShipButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(3, 479);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(478, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "New ship...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.newShipButton.Location = new System.Drawing.Point(3, 479);
+            this.newShipButton.Name = "newShipButton";
+            this.newShipButton.Size = new System.Drawing.Size(478, 23);
+            this.newShipButton.TabIndex = 1;
+            this.newShipButton.Text = "New ship...";
+            this.newShipButton.UseVisualStyleBackColor = true;
+            this.newShipButton.Click += new System.EventHandler(this.newShipButton_Click);
             // 
             // shipsGridView
             // 
@@ -527,6 +610,7 @@
             this.shipsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.shipsGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.shipsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.shipsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
@@ -534,7 +618,8 @@
             this.Column8,
             this.Column9,
             this.Column10,
-            this.Column11});
+            this.Column11,
+            this.Column38});
             this.shipsGridView.Location = new System.Drawing.Point(3, 3);
             this.shipsGridView.MultiSelect = false;
             this.shipsGridView.Name = "shipsGridView";
@@ -543,6 +628,7 @@
             this.shipsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.shipsGridView.Size = new System.Drawing.Size(478, 470);
             this.shipsGridView.TabIndex = 0;
+            this.shipsGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.shipsGridView_CellMouseClick);
             // 
             // Column6
             // 
@@ -586,35 +672,43 @@
             this.Column11.ReadOnly = true;
             this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // Column38
+            // 
+            this.Column38.HeaderText = "OverhaulStartDate";
+            this.Column38.Name = "Column38";
+            this.Column38.ReadOnly = true;
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.Controls.Add(this.button8);
-            this.flowLayoutPanel2.Controls.Add(this.button9);
+            this.flowLayoutPanel2.Controls.Add(this.editShipButton);
+            this.flowLayoutPanel2.Controls.Add(this.removeShipButton);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 170);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(350, 332);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
-            // button8
+            // editShipButton
             // 
-            this.button8.Location = new System.Drawing.Point(272, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Edit...";
-            this.button8.UseVisualStyleBackColor = true;
+            this.editShipButton.Location = new System.Drawing.Point(272, 3);
+            this.editShipButton.Name = "editShipButton";
+            this.editShipButton.Size = new System.Drawing.Size(75, 23);
+            this.editShipButton.TabIndex = 0;
+            this.editShipButton.Text = "Edit...";
+            this.editShipButton.UseVisualStyleBackColor = true;
+            this.editShipButton.Click += new System.EventHandler(this.editShipButton_Click);
             // 
-            // button9
+            // removeShipButton
             // 
-            this.button9.Location = new System.Drawing.Point(191, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "Remove";
-            this.button9.UseVisualStyleBackColor = true;
+            this.removeShipButton.Location = new System.Drawing.Point(191, 3);
+            this.removeShipButton.Name = "removeShipButton";
+            this.removeShipButton.Size = new System.Drawing.Size(75, 23);
+            this.removeShipButton.TabIndex = 1;
+            this.removeShipButton.Text = "Remove";
+            this.removeShipButton.UseVisualStyleBackColor = true;
+            this.removeShipButton.Click += new System.EventHandler(this.removeShipButton_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -631,6 +725,14 @@
             this.tableLayoutPanel2.Controls.Add(this.label11, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label13, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.shipNameLabel, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.shipCruiseLabel, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.shipCarryCapacityLabel, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.shipHomeportLabel, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.shipPurposeLabel, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.shipCrewLabel, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.shipLocationLabel, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.shipOverhaulStartDateLabel, 1, 7);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
@@ -717,6 +819,78 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "Overhaul start date:";
             // 
+            // shipNameLabel
+            // 
+            this.shipNameLabel.AutoSize = true;
+            this.shipNameLabel.Location = new System.Drawing.Point(119, 0);
+            this.shipNameLabel.Name = "shipNameLabel";
+            this.shipNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipNameLabel.TabIndex = 8;
+            this.shipNameLabel.Text = "-";
+            // 
+            // shipCruiseLabel
+            // 
+            this.shipCruiseLabel.AutoSize = true;
+            this.shipCruiseLabel.Location = new System.Drawing.Point(119, 15);
+            this.shipCruiseLabel.Name = "shipCruiseLabel";
+            this.shipCruiseLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipCruiseLabel.TabIndex = 9;
+            this.shipCruiseLabel.Text = "-";
+            // 
+            // shipCarryCapacityLabel
+            // 
+            this.shipCarryCapacityLabel.AutoSize = true;
+            this.shipCarryCapacityLabel.Location = new System.Drawing.Point(119, 30);
+            this.shipCarryCapacityLabel.Name = "shipCarryCapacityLabel";
+            this.shipCarryCapacityLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipCarryCapacityLabel.TabIndex = 10;
+            this.shipCarryCapacityLabel.Text = "-";
+            // 
+            // shipHomeportLabel
+            // 
+            this.shipHomeportLabel.AutoSize = true;
+            this.shipHomeportLabel.Location = new System.Drawing.Point(119, 45);
+            this.shipHomeportLabel.Name = "shipHomeportLabel";
+            this.shipHomeportLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipHomeportLabel.TabIndex = 11;
+            this.shipHomeportLabel.Text = "-";
+            // 
+            // shipPurposeLabel
+            // 
+            this.shipPurposeLabel.AutoSize = true;
+            this.shipPurposeLabel.Location = new System.Drawing.Point(119, 60);
+            this.shipPurposeLabel.Name = "shipPurposeLabel";
+            this.shipPurposeLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipPurposeLabel.TabIndex = 12;
+            this.shipPurposeLabel.Text = "-";
+            // 
+            // shipCrewLabel
+            // 
+            this.shipCrewLabel.AutoSize = true;
+            this.shipCrewLabel.Location = new System.Drawing.Point(119, 75);
+            this.shipCrewLabel.Name = "shipCrewLabel";
+            this.shipCrewLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipCrewLabel.TabIndex = 13;
+            this.shipCrewLabel.Text = "-";
+            // 
+            // shipLocationLabel
+            // 
+            this.shipLocationLabel.AutoSize = true;
+            this.shipLocationLabel.Location = new System.Drawing.Point(119, 90);
+            this.shipLocationLabel.Name = "shipLocationLabel";
+            this.shipLocationLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipLocationLabel.TabIndex = 14;
+            this.shipLocationLabel.Text = "-";
+            // 
+            // shipOverhaulStartDateLabel
+            // 
+            this.shipOverhaulStartDateLabel.AutoSize = true;
+            this.shipOverhaulStartDateLabel.Location = new System.Drawing.Point(119, 105);
+            this.shipOverhaulStartDateLabel.Name = "shipOverhaulStartDateLabel";
+            this.shipOverhaulStartDateLabel.Size = new System.Drawing.Size(12, 15);
+            this.shipOverhaulStartDateLabel.TabIndex = 15;
+            this.shipOverhaulStartDateLabel.Text = "-";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.splitContainer3);
@@ -738,11 +912,13 @@
             // 
             this.splitContainer3.Panel1.Controls.Add(this.newMemberButton);
             this.splitContainer3.Panel1.Controls.Add(this.staffGridView);
+            this.splitContainer3.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel3);
             this.splitContainer3.Panel2.Controls.Add(this.tableLayoutPanel3);
+            this.splitContainer3.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer3.Size = new System.Drawing.Size(853, 514);
             this.splitContainer3.SplitterDistance = 486;
             this.splitContainer3.TabIndex = 0;
@@ -766,6 +942,7 @@
             this.staffGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.staffGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.staffGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.staffGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column12,
@@ -784,6 +961,7 @@
             this.staffGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.staffGridView.Size = new System.Drawing.Size(480, 479);
             this.staffGridView.TabIndex = 0;
+            this.staffGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.staffGridView_CellMouseClick);
             // 
             // Column12
             // 
@@ -861,6 +1039,7 @@
             this.editMemberButton.TabIndex = 0;
             this.editMemberButton.Text = "Edit...";
             this.editMemberButton.UseVisualStyleBackColor = true;
+            this.editMemberButton.Click += new System.EventHandler(this.editMemberButton_Click);
             // 
             // removeMemberButton
             // 
@@ -870,6 +1049,7 @@
             this.removeMemberButton.TabIndex = 1;
             this.removeMemberButton.Text = "Remove";
             this.removeMemberButton.UseVisualStyleBackColor = true;
+            this.removeMemberButton.Click += new System.EventHandler(this.removeMemberButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -980,6 +1160,78 @@
             this.label21.TabIndex = 7;
             this.label21.Text = "Salary:";
             // 
+            // memberFirstNameLabel
+            // 
+            this.memberFirstNameLabel.AutoSize = true;
+            this.memberFirstNameLabel.Location = new System.Drawing.Point(80, 0);
+            this.memberFirstNameLabel.Name = "memberFirstNameLabel";
+            this.memberFirstNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberFirstNameLabel.TabIndex = 8;
+            this.memberFirstNameLabel.Text = "-";
+            // 
+            // memberLastNameLabel
+            // 
+            this.memberLastNameLabel.AutoSize = true;
+            this.memberLastNameLabel.Location = new System.Drawing.Point(80, 15);
+            this.memberLastNameLabel.Name = "memberLastNameLabel";
+            this.memberLastNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberLastNameLabel.TabIndex = 9;
+            this.memberLastNameLabel.Text = "-";
+            // 
+            // memberPatronymicLabel
+            // 
+            this.memberPatronymicLabel.AutoSize = true;
+            this.memberPatronymicLabel.Location = new System.Drawing.Point(80, 30);
+            this.memberPatronymicLabel.Name = "memberPatronymicLabel";
+            this.memberPatronymicLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberPatronymicLabel.TabIndex = 10;
+            this.memberPatronymicLabel.Text = "-";
+            // 
+            // memberBirthDateLabel
+            // 
+            this.memberBirthDateLabel.AutoSize = true;
+            this.memberBirthDateLabel.Location = new System.Drawing.Point(80, 45);
+            this.memberBirthDateLabel.Name = "memberBirthDateLabel";
+            this.memberBirthDateLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberBirthDateLabel.TabIndex = 11;
+            this.memberBirthDateLabel.Text = "-";
+            // 
+            // memberShipLabel
+            // 
+            this.memberShipLabel.AutoSize = true;
+            this.memberShipLabel.Location = new System.Drawing.Point(80, 60);
+            this.memberShipLabel.Name = "memberShipLabel";
+            this.memberShipLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberShipLabel.TabIndex = 12;
+            this.memberShipLabel.Text = "-";
+            // 
+            // memberRoleLabel
+            // 
+            this.memberRoleLabel.AutoSize = true;
+            this.memberRoleLabel.Location = new System.Drawing.Point(80, 75);
+            this.memberRoleLabel.Name = "memberRoleLabel";
+            this.memberRoleLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberRoleLabel.TabIndex = 13;
+            this.memberRoleLabel.Text = "-";
+            // 
+            // memberExperienceLabel
+            // 
+            this.memberExperienceLabel.AutoSize = true;
+            this.memberExperienceLabel.Location = new System.Drawing.Point(80, 90);
+            this.memberExperienceLabel.Name = "memberExperienceLabel";
+            this.memberExperienceLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberExperienceLabel.TabIndex = 14;
+            this.memberExperienceLabel.Text = "-";
+            // 
+            // memberSalaryLabel
+            // 
+            this.memberSalaryLabel.AutoSize = true;
+            this.memberSalaryLabel.Location = new System.Drawing.Point(80, 105);
+            this.memberSalaryLabel.Name = "memberSalaryLabel";
+            this.memberSalaryLabel.Size = new System.Drawing.Size(12, 15);
+            this.memberSalaryLabel.TabIndex = 15;
+            this.memberSalaryLabel.Text = "-";
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.splitContainer4);
@@ -1001,11 +1253,13 @@
             // 
             this.splitContainer4.Panel1.Controls.Add(this.newChartererButton);
             this.splitContainer4.Panel1.Controls.Add(this.charterersGridView);
+            this.splitContainer4.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.flowLayoutPanel4);
             this.splitContainer4.Panel2.Controls.Add(this.tableLayoutPanel4);
+            this.splitContainer4.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer4.Size = new System.Drawing.Size(853, 514);
             this.splitContainer4.SplitterDistance = 487;
             this.splitContainer4.TabIndex = 0;
@@ -1027,6 +1281,7 @@
             this.charterersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.charterersGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.charterersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.charterersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column20,
@@ -1345,77 +1600,51 @@
             this.chartererAccountNumberLabel.TabIndex = 17;
             this.chartererAccountNumberLabel.Text = "-";
             // 
-            // memberFirstNameLabel
+            // tabPage5
             // 
-            this.memberFirstNameLabel.AutoSize = true;
-            this.memberFirstNameLabel.Location = new System.Drawing.Point(80, 0);
-            this.memberFirstNameLabel.Name = "memberFirstNameLabel";
-            this.memberFirstNameLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberFirstNameLabel.TabIndex = 8;
-            this.memberFirstNameLabel.Text = "-";
+            this.tabPage5.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage5.Controls.Add(this.miscGridView);
+            this.tabPage5.Controls.Add(this.miscComboBox);
+            this.tabPage5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(853, 514);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Misc";
             // 
-            // memberLastNameLabel
+            // miscGridView
             // 
-            this.memberLastNameLabel.AutoSize = true;
-            this.memberLastNameLabel.Location = new System.Drawing.Point(80, 15);
-            this.memberLastNameLabel.Name = "memberLastNameLabel";
-            this.memberLastNameLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberLastNameLabel.TabIndex = 9;
-            this.memberLastNameLabel.Text = "-";
+            this.miscGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.miscGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column37});
+            this.miscGridView.Location = new System.Drawing.Point(6, 35);
+            this.miscGridView.Name = "miscGridView";
+            this.miscGridView.RowTemplate.Height = 25;
+            this.miscGridView.Size = new System.Drawing.Size(327, 473);
+            this.miscGridView.TabIndex = 1;
+            this.miscGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.miscGridView_CellEndEdit);
+            this.miscGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.miscGridView_UserDeletedRow);
             // 
-            // memberPatronymicLabel
+            // Column37
             // 
-            this.memberPatronymicLabel.AutoSize = true;
-            this.memberPatronymicLabel.Location = new System.Drawing.Point(80, 30);
-            this.memberPatronymicLabel.Name = "memberPatronymicLabel";
-            this.memberPatronymicLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberPatronymicLabel.TabIndex = 10;
-            this.memberPatronymicLabel.Text = "-";
+            this.Column37.HeaderText = "Name";
+            this.Column37.Name = "Column37";
+            this.Column37.Width = 200;
             // 
-            // memberBirthDateLabel
+            // miscComboBox
             // 
-            this.memberBirthDateLabel.AutoSize = true;
-            this.memberBirthDateLabel.Location = new System.Drawing.Point(80, 45);
-            this.memberBirthDateLabel.Name = "memberBirthDateLabel";
-            this.memberBirthDateLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberBirthDateLabel.TabIndex = 11;
-            this.memberBirthDateLabel.Text = "-";
-            // 
-            // memberShipLabel
-            // 
-            this.memberShipLabel.AutoSize = true;
-            this.memberShipLabel.Location = new System.Drawing.Point(80, 60);
-            this.memberShipLabel.Name = "memberShipLabel";
-            this.memberShipLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberShipLabel.TabIndex = 12;
-            this.memberShipLabel.Text = "-";
-            // 
-            // memberRoleLabel
-            // 
-            this.memberRoleLabel.AutoSize = true;
-            this.memberRoleLabel.Location = new System.Drawing.Point(80, 75);
-            this.memberRoleLabel.Name = "memberRoleLabel";
-            this.memberRoleLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberRoleLabel.TabIndex = 13;
-            this.memberRoleLabel.Text = "-";
-            // 
-            // memberExperienceLabel
-            // 
-            this.memberExperienceLabel.AutoSize = true;
-            this.memberExperienceLabel.Location = new System.Drawing.Point(80, 90);
-            this.memberExperienceLabel.Name = "memberExperienceLabel";
-            this.memberExperienceLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberExperienceLabel.TabIndex = 14;
-            this.memberExperienceLabel.Text = "-";
-            // 
-            // memberSalaryLabel
-            // 
-            this.memberSalaryLabel.AutoSize = true;
-            this.memberSalaryLabel.Location = new System.Drawing.Point(80, 105);
-            this.memberSalaryLabel.Name = "memberSalaryLabel";
-            this.memberSalaryLabel.Size = new System.Drawing.Size(12, 15);
-            this.memberSalaryLabel.TabIndex = 15;
-            this.memberSalaryLabel.Text = "-";
+            this.miscComboBox.FormattingEnabled = true;
+            this.miscComboBox.Items.AddRange(new object[] {
+            "GeneralCargoType",
+            "Port",
+            "Role",
+            "ShipPurpose"});
+            this.miscComboBox.Location = new System.Drawing.Point(6, 6);
+            this.miscComboBox.Name = "miscComboBox";
+            this.miscComboBox.Size = new System.Drawing.Size(327, 23);
+            this.miscComboBox.TabIndex = 0;
+            this.miscComboBox.SelectedIndexChanged += new System.EventHandler(this.miscComboBox_SelectedIndexChanged);
             // 
             // MainWindow
             // 
@@ -1433,7 +1662,7 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cruisesGridView)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routePointsGridView)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -1463,6 +1692,8 @@
             this.flowLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.miscGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1473,14 +1704,14 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private SplitContainer splitContainer1;
-        private Button button1;
+        private Button newCruiseButton;
         private DataGridView cruisesGridView;
         private SplitContainer splitContainer2;
         private TabPage tabPage3;
         private SplitContainer splitContainer3;
         private TabPage tabPage4;
         private SplitContainer splitContainer4;
-        private Button button2;
+        private Button newShipButton;
         private DataGridView shipsGridView;
         private Button newMemberButton;
         private DataGridView staffGridView;
@@ -1521,13 +1752,13 @@
         private Label label29;
         private Label label30;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button7;
-        private Button button5;
-        private Button button6;
-        private DataGridView dataGridView5;
+        private Button updateRoutePointButton;
+        private Button editCruiseButton;
+        private Button removeCruiseButton;
+        private DataGridView routePointsGridView;
         private FlowLayoutPanel flowLayoutPanel2;
-        private Button button8;
-        private Button button9;
+        private Button editShipButton;
+        private Button removeShipButton;
         private FlowLayoutPanel flowLayoutPanel3;
         private Button editMemberButton;
         private Button removeMemberButton;
@@ -1547,12 +1778,6 @@
         private DataGridViewTextBoxColumn Column34;
         private DataGridViewTextBoxColumn Column35;
         private DataGridViewTextBoxColumn Column36;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column12;
         private DataGridViewTextBoxColumn Column13;
         private DataGridViewTextBoxColumn Column14;
@@ -1587,5 +1812,29 @@
         private Label memberRoleLabel;
         private Label memberExperienceLabel;
         private Label memberSalaryLabel;
+        private TabPage tabPage5;
+        private DataGridView miscGridView;
+        private ComboBox miscComboBox;
+        private DataGridViewTextBoxColumn Column37;
+        private Label cruiseDeparturePortLabel;
+        private Label cruiseDestinationPortLabel;
+        private Label cruiseShipLabel;
+        private Label cruiseGeneralCargoLabel;
+        private Label cruiseChartererLabel;
+        private Label shipNameLabel;
+        private Label shipCruiseLabel;
+        private Label shipCarryCapacityLabel;
+        private Label shipHomeportLabel;
+        private Label shipPurposeLabel;
+        private Label shipCrewLabel;
+        private Label shipLocationLabel;
+        private Label shipOverhaulStartDateLabel;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column38;
     }
 }
