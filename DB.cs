@@ -46,6 +46,18 @@ namespace rpbd2
             return instance;
         }
 
+        public IList Search(string tableName, string fieldName, string query)
+        {
+            var q = "from " + tableName + " as t where lower(t." + fieldName + ") like lower('%" + query + "%')";
+            try
+            {
+                return session.CreateQuery(q).List();
+            } catch
+            {
+                return new List<object>();
+            }
+        }
+
         public T Get<T>(int id)
         {
             return session.Get<T>(id);

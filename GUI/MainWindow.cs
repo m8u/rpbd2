@@ -487,5 +487,36 @@ namespace rpbd2.GUI
 
                 });
         }
+
+        private void charterersSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!charterersSearchTextBox.Text.Contains(":"))
+            {
+                LoadCharterers();
+                return;
+            }
+            string[] tokens = charterersSearchTextBox.Text.Split(":");
+            string fieldName = tokens[0];
+            string query = tokens[1];
+            if (query.Equals(""))
+                return;
+            var found = DB.getInstance().Search("Charterer", fieldName, query);
+            charterersGridView.Rows.Clear();
+            foreach (var item in found)
+            {
+                var charterer = (Entities.Charterer)item;
+                charterersGridView.Rows.Add(new object[] {
+                            charterer.Name,
+                            charterer.Address,
+                            charterer.PhoneNumber,
+                            charterer.Fax,
+                            charterer.Email,
+                            charterer.BankName,
+                            charterer.BankCity,
+                            charterer.BankTIN,
+                            charterer.BankAccountNumber
+                        });
+            }
+        }
     }
 }

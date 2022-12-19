@@ -127,6 +127,7 @@
             this.memberSalaryLabel = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.charterersSearchTextBox = new System.Windows.Forms.TextBox();
             this.newChartererButton = new System.Windows.Forms.Button();
             this.charterersGridView = new System.Windows.Forms.DataGridView();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1251,6 +1252,7 @@
             // 
             // splitContainer4.Panel1
             // 
+            this.splitContainer4.Panel1.Controls.Add(this.charterersSearchTextBox);
             this.splitContainer4.Panel1.Controls.Add(this.newChartererButton);
             this.splitContainer4.Panel1.Controls.Add(this.charterersGridView);
             this.splitContainer4.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1263,6 +1265,14 @@
             this.splitContainer4.Size = new System.Drawing.Size(853, 514);
             this.splitContainer4.SplitterDistance = 487;
             this.splitContainer4.TabIndex = 0;
+            // 
+            // charterersSearchTextBox
+            // 
+            this.charterersSearchTextBox.Location = new System.Drawing.Point(3, 4);
+            this.charterersSearchTextBox.Name = "charterersSearchTextBox";
+            this.charterersSearchTextBox.Size = new System.Drawing.Size(481, 23);
+            this.charterersSearchTextBox.TabIndex = 3;
+            this.charterersSearchTextBox.TextChanged += new System.EventHandler(this.charterersSearchTextBox_TextChanged);
             // 
             // newChartererButton
             // 
@@ -1293,13 +1303,13 @@
             this.Column26,
             this.Column27,
             this.Column28});
-            this.charterersGridView.Location = new System.Drawing.Point(3, 3);
+            this.charterersGridView.Location = new System.Drawing.Point(3, 33);
             this.charterersGridView.MultiSelect = false;
             this.charterersGridView.Name = "charterersGridView";
             this.charterersGridView.ReadOnly = true;
             this.charterersGridView.RowTemplate.Height = 25;
             this.charterersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.charterersGridView.Size = new System.Drawing.Size(481, 479);
+            this.charterersGridView.Size = new System.Drawing.Size(481, 449);
             this.charterersGridView.TabIndex = 1;
             this.charterersGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.charterersGridView_CellMouseClick);
             // 
@@ -1685,6 +1695,7 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
@@ -1836,5 +1847,6 @@
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column38;
+        private TextBox charterersSearchTextBox;
     }
 }
