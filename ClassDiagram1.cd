@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IO.Swagger.Model.Charterer">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAQgCAAAAAEgCAEQAQAgAAAAIACIAAAAAAAAAA=</HashCode>
+      <FileName>IO.Swagger\Model\Charterer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.CrewMember">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAGAAAAAAAAAMkAAEAAQAAACAAIAAIAAAAAAAQAI=</HashCode>
+      <FileName>IO.Swagger\Model\CrewMember.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Role1" />
+      <Property Name="Ship1" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.Cruise">
+    <Position X="7.75" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAOAAgBAAAAAAAUgCAEAABACACAAIAAIAAAAAAEAAA=</HashCode>
+      <FileName>IO.Swagger\Model\Cruise.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Charterer1" />
+      <Property Name="Port" />
+      <Property Name="Port1" />
+      <Property Name="GeneralCargoType" />
+      <Property Name="Ship1" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.Ship">
+    <Position X="5.25" Y="4.5" Width="1.75" />
+    <AssociationLine Name="Port" Type="IO.Swagger.Model.Port">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.06" Y="0.11" Height="0.182" Width="0.58" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAEAAAAACAAEgAIEAAQQCAAAAIAgIIAAAAAAAAA=</HashCode>
+      <FileName>IO.Swagger\Model\Ship.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Port" />
+      <Property Name="ShipPurpose" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.GeneralCargoType">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEgAAEAAQAAAAAAIAAIAAAAAAAAAA=</HashCode>
+      <FileName>IO.Swagger\Model\GeneralCargoType.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.Port">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEgAAEAAQAAAAAAIAAIAAAAAAAAAA=</HashCode>
+      <FileName>IO.Swagger\Model\Port.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.Role">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEgAAEAAQAAAAAAIAAIAAAAAAAAAA=</HashCode>
+      <FileName>IO.Swagger\Model\Role.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.ShipPurpose">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEgAAEAAQAAAAAAIAAIAAAAAAAAAA=</HashCode>
+      <FileName>IO.Swagger\Model\ShipPurpose.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IO.Swagger.Model.PortEntry">
+    <Position X="11.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEACAAABAAIAAAAGgAAEAAAACAAACIBAIAIAIAAAAAA=</HashCode>
+      <FileName>IO.Swagger\Model\PortEntry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cruise1" />
+      <Property Name="Port1" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

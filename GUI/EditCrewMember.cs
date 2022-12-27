@@ -1,11 +1,13 @@
-﻿namespace rpbd2.GUI
+﻿using IO.Swagger.Model;
+
+namespace rpbd2.GUI
 {
     public partial class EditCrewMember : Form
     {
         MainWindow mainWindow;
-        Entities.CrewMember? member;
+        CrewMember? member;
 
-        public EditCrewMember(MainWindow mainWindow, Entities.CrewMember? member)
+        public EditCrewMember(MainWindow mainWindow, CrewMember? member)
         {
             InitializeComponent();
 
@@ -22,13 +24,13 @@
             }
             else
             {
-                firstNameTextBox.Text = member.FirstName;
-                lastNameTextBox.Text = member.LastName;
+                firstNameTextBox.Text = member.Firstname;
+                lastNameTextBox.Text = member.Lastname;
                 patronymicTextBox.Text = member.Patronymic;
-                birthDatePicker.Value = member.BirthDate;
-                roleComboBox.SelectedIndex = mainWindow.roles.IndexOf(member.Role);
-                experienceNumeric.Value = member.Experience;
-                salaryNumeric.Value = member.Salary;
+                birthDatePicker.Value = DateTime.Parse(member.Birthdate);
+                roleComboBox.SelectedIndex = mainWindow.roles.IndexOf(mainWindow.roles.Where(role => role.Id == member.Role).First());
+                experienceNumeric.Value = (decimal)member.Experience;
+                salaryNumeric.Value = (decimal)member.Salary;
             }
         }
 
@@ -36,19 +38,18 @@
         {
             if (member == null)
             {
-                mainWindow.members.Add(new Entities.CrewMember());
+                mainWindow.members.Add(new CrewMember());
                 member = mainWindow.members.LastOrDefault();
-                DB.getInstance().Save(member);
             }
-            member.FirstName = firstNameTextBox.Text;
-            member.LastName = lastNameTextBox.Text;
+            member.Firstname = firstNameTextBox.Text;
+            member.Lastname = lastNameTextBox.Text;
             member.Patronymic = patronymicTextBox.Text;
-            member.BirthDate = birthDatePicker.Value;
-            member.Role = mainWindow.roles[roleComboBox.SelectedIndex];
+            member.Birthdate = birthDatePicker.Value.ToShortDateString();
+            member.Role = mainWindow.roles[roleComboBox.SelectedIndex].Id;
             member.Experience = (int)experienceNumeric.Value;
             member.Salary = (int)salaryNumeric.Value;
 
-            DB.getInstance().FlushAsync();
+            mainWindow.crewMembersApi.AddOrUpdateCrewMember(member);
 
             Close();
         }

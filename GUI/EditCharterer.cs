@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IO.Swagger.Model;
 
 namespace rpbd2.GUI
 {
     public partial class EditCharterer : Form
     {
         MainWindow mainWindow;
-        Entities.Charterer? charterer;
+        Charterer? charterer;
 
-        public EditCharterer(MainWindow mainWindow, Entities.Charterer? charterer)
+        public EditCharterer(MainWindow mainWindow, Charterer? charterer)
         {
             InitializeComponent();
 
@@ -29,13 +30,13 @@ namespace rpbd2.GUI
             {
                 nameTextBox.Text = charterer.Name;
                 addressTextBox.Text = charterer.Address;
-                phoneNumberTextBox.Text = charterer.PhoneNumber;
+                phoneNumberTextBox.Text = charterer.Phonenumber;
                 faxTextBox.Text = charterer.Fax;
                 emailTextBox.Text = charterer.Email;
-                bankNameTextBox.Text = charterer.BankName;
-                bankCityTextBox.Text = charterer.BankCity;
-                tinTextBox.Text = charterer.BankTIN;
-                accountNumberTextBox.Text = charterer.BankAccountNumber;
+                bankNameTextBox.Text = charterer.Bankname;
+                bankCityTextBox.Text = charterer.Bankcity;
+                tinTextBox.Text = charterer.Tin;
+                accountNumberTextBox.Text = charterer.Bankaccount;
             }
         }
 
@@ -43,20 +44,20 @@ namespace rpbd2.GUI
         {
             if (charterer == null)
             {
-                mainWindow.charterers.Add(new Entities.Charterer());
+                mainWindow.charterers.Add(new Charterer());
                 charterer = mainWindow.charterers.LastOrDefault();
-                DB.getInstance().Save(charterer);
             }
             charterer.Name = nameTextBox.Text;
             charterer.Address = addressTextBox.Text;
-            charterer.PhoneNumber = phoneNumberTextBox.Text;
+            charterer.Phonenumber = phoneNumberTextBox.Text;
             charterer.Fax = faxTextBox.Text;
             charterer.Email = emailTextBox.Text;
-            charterer.BankName = bankNameTextBox.Text;
-            charterer.BankCity = bankCityTextBox.Text;
-            charterer.BankTIN = tinTextBox.Text;
-            charterer.BankAccountNumber = accountNumberTextBox.Text;
-            DB.getInstance().FlushAsync();
+            charterer.Bankname = bankNameTextBox.Text;
+            charterer.Bankcity = bankCityTextBox.Text;
+            charterer.Tin = tinTextBox.Text;
+            charterer.Bankaccount = accountNumberTextBox.Text;
+
+            mainWindow.charterersApi.AddOrUpdateCharterer(charterer);
 
             Close();
         }

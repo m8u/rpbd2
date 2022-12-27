@@ -1,40 +1,63 @@
 using System.Windows.Forms;
+using IO.Swagger.Api;
+using IO.Swagger.Model;
+using IO.Swagger.Client;
 
 namespace rpbd2.GUI
 {
     public partial class MainWindow : Form
     {
-        public IList<Entities.Cruise> cruises;
-        public IList<Entities.Ship> ships;
-        public IList<Entities.CrewMember> members;
-        public IList<Entities.Charterer> charterers;
+        public IList<Cruise> cruises;
+        public IList<Ship> ships;
+        public IList<CrewMember> members;
+        public IList<Charterer> charterers;
 
-        public IList<Entities.GeneralCargoType> generalCargoTypes;
-        public IList<Entities.Port> ports;
-        public IList<Entities.Role> roles;
-        public IList<Entities.ShipPurpose> shipPurposes;
+        public IList<GeneralCargoType> generalCargoTypes;
+        public IList<Port> ports;
+        public IList<Role> roles;
+        public IList<ShipPurpose> shipPurposes;
+
+        public CharterersApi charterersApi;
+        public CrewMembersApi crewMembersApi;
+        public ShipsApi shipsApi;
+        public CruisesApi cruisesApi;
+        public PortEntriesApi portEntriesApi;
+        public PortsApi portsApi;
+        public RolesApi rolesApi;
+        public ShipPurposesApi shipPurposesApi;
+        public GeneralCargoTypesApi generalCargoTypesApi;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            cruises = new List<Entities.Cruise>();
-            ships = new List<Entities.Ship>();
-            members = new List<Entities.CrewMember>();
-            charterers = new List<Entities.Charterer>();
-            generalCargoTypes = new List<Entities.GeneralCargoType>();
-            ports = new List<Entities.Port>();
-            roles = new List<Entities.Role>();
-            shipPurposes = new List<Entities.ShipPurpose>();
+            cruises = new List<Cruise>();
+            ships = new List<Ship>();
+            members = new List<CrewMember>();
+            charterers = new List<Charterer>();
+            generalCargoTypes = new List<GeneralCargoType>();
+            ports = new List<Port>();
+            roles = new List<Role>();
+            shipPurposes = new List<ShipPurpose>();
 
-            LoadCharterers();
-            LoadStaff();
-            LoadShips();
-            LoadCruises();
+            charterersApi = new CharterersApi();
+            crewMembersApi = new CrewMembersApi();
+            shipsApi = new ShipsApi();
+            cruisesApi = new CruisesApi();
+            portEntriesApi = new PortEntriesApi();
+            portsApi = new PortsApi();
+            rolesApi = new RolesApi();
+            shipPurposesApi = new ShipPurposesApi();
+            generalCargoTypesApi = new GeneralCargoTypesApi();
+
             LoadGeneralCargoTypes(true);
             LoadPorts(true);
             LoadRoles(true);
             LoadShipPurposes(true);
+            LoadCharterers();
+            LoadShips();
+            LoadStaff();
+            LoadCruises();
             miscComboBox.SelectedIndex = 0;
         }
 
@@ -65,20 +88,20 @@ namespace rpbd2.GUI
             cruisesGridView.Rows.Clear();
             if (cruises.Count == 0)
             {
-                foreach (var item in DB.getInstance().GetAll("Cruise"))
+                foreach (var cruise in cruisesApi.GetCruises())
                 {
-                    Entities.Cruise cruise = (Entities.Cruise)item;
+                    cruise.Portentries = portEntriesApi.GetPortEntriesByCruiseId(cruise.Id);
                     cruises.Add(cruise);
                 }
             }
             foreach (var cruise in cruises)
             {
                 cruisesGridView.Rows.Add(new object[] {
-                            cruise.Ship.Name,
-                            cruise.GeneralCargoType.Name,
-                            cruise.DeparturePort.Name,
-                            cruise.DestinationPort.Name,
-                            cruise.Charterer.Name
+                            ports.Where(port => port.Id == cruise.Departureport).First().Name,
+                            ports.Where(port => port.Id == cruise.Destinationport).First().Name,
+                            ships.Where(ship => ship.Id == cruise.Ship).First().Name,
+                            generalCargoTypes.Where(generalCargoType => generalCargoType.Id == cruise.Generalcargotype).First().Name,
+                            charterers.Where(charterer => charterer.Id == cruise.Charterer).First().Name
                         });
             }
         }
@@ -88,24 +111,29 @@ namespace rpbd2.GUI
             shipsGridView.Rows.Clear();
             if (ships.Count == 0)
             {
-                foreach (var item in DB.getInstance().GetAll("Ship"))
+                foreach (var ship in shipsApi.GetShips())
                 {
-                    Entities.Ship ship = (Entities.Ship)item;
                     ships.Add(ship);
                 }
             }
             foreach (var ship in ships)
             {
+                string currentCruiseString = "";
+                try
+                {
+                    Cruise currentCruise = cruises.Where(cruise => cruise.Id == ship.Currentcruise).First();
+                    Port departurePort = ports.Where(port => port.Id == currentCruise.Departureport).First();
+                    Port destinationPort = ports.Where(port => port.Id == currentCruise.Destinationport).First();
+                    currentCruiseString = departurePort.Name + " - " + destinationPort.Name;
+                } catch {}
                 shipsGridView.Rows.Add(new object[] {
                             ship.Name,
-                            ship.CurrentCruise != null ?
-                                ship.CurrentCruise.DeparturePort.Name + " - " + ship.CurrentCruise.DestinationPort.Name
-                                : "-",
-                            ship.CarryCapacity,
-                            ship.Homeport.Name,
-                            ship.Purpose.Name,
+                            currentCruiseString,
+                            ship.Carrycapacity,
+                            ports.Where(port => port.Id == ship.Homeport).First().Name,
+                            shipPurposes.Where(purpose => purpose.Id == ship.Purpose).First().Name,
                             ship.Location,
-                            ship.OverhaulStartDate,
+                            ship.Overhaulstartdate,
                         });
             }
         }
@@ -115,23 +143,22 @@ namespace rpbd2.GUI
             staffGridView.Rows.Clear();
             if (members.Count == 0)
             {
-                foreach (var item in DB.getInstance().GetAll("CrewMember"))
+                foreach (var crewMember in crewMembersApi.GetCrewMembers())
                 {
-                    Entities.CrewMember member = (Entities.CrewMember)item;
-                    members.Add(member);
+                    members.Add(crewMember);
                 }
             }
             foreach (var member in members)
             {
                 staffGridView.Rows.Add(new object[] {
-                            member.FirstName,
-                            member.LastName,
+                            member.Firstname,
+                            member.Lastname,
                             member.Patronymic,
-                            member.BirthDate,
-                            member.Role.Name,
+                            member.Birthdate,
+                            (member.Ship != null && member.Ship != 0 ? ships.Where(ship => ship.Id == member.Ship).First().Name : ""),
+                            roles.Where(role => role.Id == member.Role).First().Name,
                             member.Experience,
                             member.Salary,
-                            (member.CurrentShip != null ? member.CurrentShip.Name : "")
                         });
             }
         }
@@ -141,9 +168,8 @@ namespace rpbd2.GUI
             charterersGridView.Rows.Clear();
             if (charterers.Count == 0)
             {
-                foreach (var item in DB.getInstance().GetAll("Charterer"))
+                foreach (var charterer in this.charterersApi.GetCharterers())
                 {
-                    Entities.Charterer charterer = (Entities.Charterer)item;
                     charterers.Add(charterer);
                 }
             }
@@ -152,13 +178,13 @@ namespace rpbd2.GUI
                 charterersGridView.Rows.Add(new object[] {
                             charterer.Name,
                             charterer.Address,
-                            charterer.PhoneNumber,
+                            charterer.Phonenumber,
                             charterer.Fax,
                             charterer.Email,
-                            charterer.BankName,
-                            charterer.BankCity,
-                            charterer.BankTIN,
-                            charterer.BankAccountNumber
+                            charterer.Bankname,
+                            charterer.Bankcity,
+                            charterer.Tin,
+                            charterer.Bankaccount
                         });
             }
         }
@@ -188,9 +214,8 @@ namespace rpbd2.GUI
         {
             if (initial)
             {
-                foreach (var item in DB.getInstance().GetAll("GeneralCargoType"))
+                foreach (var generalCargoType in generalCargoTypesApi.GetGeneralCargoTypes())
                 {
-                    Entities.GeneralCargoType generalCargoType = (Entities.GeneralCargoType)item;
                     generalCargoTypes.Add(generalCargoType);
                 }
                 return;
@@ -207,9 +232,8 @@ namespace rpbd2.GUI
         {
             if (initial)
             {
-                foreach (var item in DB.getInstance().GetAll("Port"))
+                foreach (var port in portsApi.GetPorts())
                 {
-                    Entities.Port port = (Entities.Port)item;
                     ports.Add(port);
                 }
                 return;
@@ -226,9 +250,8 @@ namespace rpbd2.GUI
         {
             if (initial)
             {
-                foreach (var item in DB.getInstance().GetAll("Role"))
+                foreach (var role in rolesApi.GetRoles())
                 {
-                    Entities.Role role = (Entities.Role)item;
                     roles.Add(role);
                 }
                 return;
@@ -245,9 +268,8 @@ namespace rpbd2.GUI
         {
             if (initial)
             {
-                foreach (var item in DB.getInstance().GetAll("ShipPurpose"))
+                foreach (var shipPurpose in shipPurposesApi.GetShipPurposes())
                 {
-                    Entities.ShipPurpose shipPurpose = (Entities.ShipPurpose)item;
                     shipPurposes.Add(shipPurpose);
                 }
                 return;
@@ -296,7 +318,7 @@ namespace rpbd2.GUI
         private void removeChartererButton_Click(object sender, EventArgs e)
         {
             var index = charterersGridView.SelectedRows[0].Index;
-            DB.getInstance().Delete(charterers[index]);
+            charterersApi.DeleteCharterer(charterers[index].Id);
             charterers.RemoveAt(index);
 
             tabControl1_SelectedIndexChanged(null, null);
@@ -319,7 +341,7 @@ namespace rpbd2.GUI
         private void removeMemberButton_Click(object sender, EventArgs e)
         {
             var index = staffGridView.SelectedRows[0].Index;
-            DB.getInstance().Delete(members[index]);
+            crewMembersApi.DeleteCrewMember(members[index].Id);
             members.RemoveAt(index);
 
             tabControl1_SelectedIndexChanged(null, null);
@@ -336,11 +358,11 @@ namespace rpbd2.GUI
             memberFirstNameLabel.Text = (string)cells[0].Value;
             memberLastNameLabel.Text = (string)cells[1].Value;
             memberPatronymicLabel.Text = (string)cells[2].Value;
-            memberBirthDateLabel.Text = ((DateTime)cells[3].Value).ToString();
-            memberRoleLabel.Text = (string)cells[4].Value;
-            memberExperienceLabel.Text = ((int)cells[5].Value).ToString();
-            memberSalaryLabel.Text = ((int)cells[6].Value).ToString();
-            memberShipLabel.Text = !cells[7].Value.Equals("") ? ((Entities.Ship)cells[7].Value).Name : "-";
+            memberBirthDateLabel.Text = (string)cells[3].Value;
+            memberShipLabel.Text = (string)cells[4].Value;
+            memberRoleLabel.Text = (string)cells[5].Value;
+            memberExperienceLabel.Text = cells[6].Value.ToString();
+            memberSalaryLabel.Text = cells[7].Value.ToString();
         }
 
         private void miscComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -356,31 +378,31 @@ namespace rpbd2.GUI
                 default:
                 case 0:
                     if (e.RowIndex >= generalCargoTypes.Count)
-                        generalCargoTypes.Add(new Entities.GeneralCargoType() { Name = newName });
+                        generalCargoTypes.Add(new GeneralCargoType() { Name = newName });
                     else
                         generalCargoTypes[e.RowIndex].Name = newName;
-                    DB.getInstance().Save(generalCargoTypes.LastOrDefault());
+                    generalCargoTypesApi.AddGeneralCargoType(generalCargoTypes.LastOrDefault());
                     break;
                 case 1:
                     if (e.RowIndex >= ports.Count)
-                        ports.Add(new Entities.Port() { Name = newName });
+                        ports.Add(new Port() { Name = newName });
                     else
                         ports[e.RowIndex].Name = newName;
-                    DB.getInstance().Save(ports.LastOrDefault());
+                    portsApi.AddPort(ports.LastOrDefault());
                     break;
                 case 2:
                     if (e.RowIndex >= roles.Count)
-                        roles.Add(new Entities.Role() { Name = newName });
+                        roles.Add(new Role() { Name = newName });
                     else
                         roles[e.RowIndex].Name = newName;
-                    DB.getInstance().Save(roles.LastOrDefault());
+                    rolesApi.AddRole(roles.LastOrDefault());
                     break;
                 case 3:
                     if (e.RowIndex >= shipPurposes.Count)
-                        shipPurposes.Add(new Entities.ShipPurpose() { Name = newName });
+                        shipPurposes.Add(new ShipPurpose() { Name = newName });
                     else
                         shipPurposes[e.RowIndex].Name = newName;
-                    DB.getInstance().Save(shipPurposes.LastOrDefault());
+                    shipPurposesApi.AddShipPurpose(shipPurposes.LastOrDefault());
                     break;
             }
 
@@ -388,8 +410,26 @@ namespace rpbd2.GUI
 
         private void miscGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
-            DB.getInstance().Delete(generalCargoTypes[e.Row.Index]);
-            generalCargoTypes.RemoveAt(e.Row.Index);
+            int index = miscGridView.SelectedRows[0].Index;
+            switch (miscComboBox.SelectedIndex)
+            {
+                case 0:
+                    generalCargoTypesApi.DeleteGeneralCargoType(generalCargoTypes[index].Id);
+                    generalCargoTypes.RemoveAt(index);
+                    break;
+                case 1:
+                    portsApi.DeletePort(ports[index].Id);
+                    ports.RemoveAt(index);
+                    break;
+                case 2:
+                    rolesApi.DeleteRole(roles[index].Id);
+                    roles.RemoveAt(index);
+                    break;
+                case 3:
+                    shipPurposesApi.DeleteShipPurpose(shipPurposes[index].Id);
+                    shipPurposes.RemoveAt(index);
+                    break;
+            }
         }
 
         private void newShipButton_Click(object sender, EventArgs e)
@@ -413,7 +453,7 @@ namespace rpbd2.GUI
         private void removeShipButton_Click(object sender, EventArgs e)
         {
             var index = shipsGridView.SelectedRows[0].Index;
-            DB.getInstance().Delete(ships[index]);
+            shipsApi.DeleteShip(ships[index].Id);
             ships.RemoveAt(index);
 
             tabControl1_SelectedIndexChanged(null, null);
@@ -428,12 +468,12 @@ namespace rpbd2.GUI
             shipHomeportLabel.Text = (string)cells[3].Value;
             shipPurposeLabel.Text = (string)cells[4].Value;
             shipCrewLabel.Text = "";
-            foreach (var member in ships[shipsGridView.SelectedRows[0].Index].Crew)
+            foreach (var member in members.Where(_member => _member.Ship == ships[shipsGridView.SelectedRows[0].Index].Id))
             {
-                shipCrewLabel.Text += member.FirstName[0] + ". " + member.Patronymic[0] + ". " + member.LastName + "\n";
+                shipCrewLabel.Text += member.Firstname[0] + ". " + member.Patronymic[0] + ". " + member.Lastname + "\n";
             }
-            shipLocationLabel.Text = ((Point)cells[5].Value).ToString();
-            shipOverhaulStartDateLabel.Text = ((DateTime)cells[6].Value).ToString();
+            shipLocationLabel.Text = cells[5].Value != null ? ((Point)cells[5].Value).ToString() : "";
+            shipOverhaulStartDateLabel.Text = (string)cells[6].Value;
         }
 
         private void newCruiseButton_Click(object sender, EventArgs e)
@@ -458,7 +498,7 @@ namespace rpbd2.GUI
         private void removeCruiseButton_Click(object sender, EventArgs e)
         {
             var index = cruisesGridView.SelectedRows[0].Index;
-            DB.getInstance().Delete(cruises[index]);
+            cruisesApi.DeleteCruise(cruises[index].Id);
             cruises.RemoveAt(index);
 
             tabControl1_SelectedIndexChanged(null, null);
@@ -473,50 +513,65 @@ namespace rpbd2.GUI
             cruiseGeneralCargoLabel.Text = (string)cells[3].Value;
             cruiseChartererLabel.Text = (string)cells[4].Value;
             routePointsGridView.Rows.Clear();
-            foreach (var portEntry in cruises[cruisesGridView.SelectedRows[0].Index].PortEntries)
+            for (var i = 0; i < cruises[cruisesGridView.SelectedRows[0].Index].Portentries.Count; i++) {
+                var portEntry = cruises[cruisesGridView.SelectedRows[0].Index].Portentries[i];
+                string status = "";
+                if (portEntry.Destinationdateactual != null && portEntry.Departuredateactual == null)
+                {
+                    status = "Arrived";
+                } else if (portEntry.Departuredateactual != null && 
+                    i+1 < cruises[cruisesGridView.SelectedRows[0].Index].Portentries.Count &&
+                    cruises[cruisesGridView.SelectedRows[0].Index].Portentries[i+1].Destinationdateactual == null)
+                {
+                    status = "Departed";
+                }
                 routePointsGridView.Rows.Add(new object[]
                 {
-                    "",
-                    portEntry.Port.Name,
-                    portEntry.DestinationPlanned,
-                    portEntry.DestinationActual,
-                    portEntry.DeparturePlanned,
-                    portEntry.DepartureActual,
-                    portEntry.DestinationDelayReason,
-                    portEntry.DepartureDelayReason,
-
+                    status,
+                    ports.Where(port => port.Id == portEntry.Port).First().Name,
+                    portEntry.Destinationdateplanned,
+                    portEntry.Destinationdateactual,
+                    portEntry.Departuredateplanned,
+                    portEntry.Departuredateactual,
+                    portEntry.Destinationdelayreason,
+                    portEntry.Departuredelayreason,
                 });
+            }
         }
 
         private void charterersSearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!charterersSearchTextBox.Text.Contains(":"))
+        }
+
+        private void updateRoutePointButton_Click(object sender, EventArgs e)
+        {
+            PortEntry portEntry = null;
+            var i = 0;
+            bool isDestination = false;
+            for (; i < cruises[cruisesGridView.SelectedRows[0].Index].Portentries.Count; i++)
             {
-                LoadCharterers();
-                return;
+                portEntry = cruises[cruisesGridView.SelectedRows[0].Index].Portentries[i];
+                if ((portEntry.Destinationdateactual == null && portEntry.Departuredateactual == null) ||
+                    (portEntry.Destinationdateactual != null && portEntry.Departuredateactual == null))
+                {
+                    break;
+                }
+                if (i+1 < cruises[cruisesGridView.SelectedRows[0].Index].Portentries.Count &&
+                    cruises[cruisesGridView.SelectedRows[0].Index].Portentries[i+1].Destinationdateactual == null)
+                {
+                    isDestination = true;
+                    portEntry = cruises[cruisesGridView.SelectedRows[0].Index].Portentries[i+1];
+                    break;
+                }
             }
-            string[] tokens = charterersSearchTextBox.Text.Split(":");
-            string fieldName = tokens[0];
-            string query = tokens[1];
-            if (query.Equals(""))
-                return;
-            var found = DB.getInstance().Search("Charterer", fieldName, query);
-            charterersGridView.Rows.Clear();
-            foreach (var item in found)
-            {
-                var charterer = (Entities.Charterer)item;
-                charterersGridView.Rows.Add(new object[] {
-                            charterer.Name,
-                            charterer.Address,
-                            charterer.PhoneNumber,
-                            charterer.Fax,
-                            charterer.Email,
-                            charterer.BankName,
-                            charterer.BankCity,
-                            charterer.BankTIN,
-                            charterer.BankAccountNumber
-                        });
-            }
+            portEntry.Destinationdateactual = isDestination || portEntry.Destinationdateactual == null ?
+                DateTime.Now : portEntry.Destinationdateactual;
+            portEntry.Departuredateactual = !isDestination ?
+                DateTime.Now : portEntry.Departuredateactual;
+
+            portEntriesApi.AddOrUpdatePortEntry(portEntry);
+
+            cruisesGridView_CellMouseClick(null, null);
         }
     }
 }

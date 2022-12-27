@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IO.Swagger.Model;
 
 namespace rpbd2.GUI
 {
     public partial class EditCruise : Form
     {
         public MainWindow mainWindow;
-        Entities.Cruise cruise;
+        Cruise cruise;
 
-        public EditCruise(MainWindow mainWindow, Entities.Cruise cruise)
+        public EditCruise(MainWindow mainWindow, Cruise cruise)
         {
             InitializeComponent();
 
@@ -41,11 +42,11 @@ namespace rpbd2.GUI
             }
             else
             {
-                shipComboBox.SelectedIndex = mainWindow.ships.IndexOf(cruise.Ship);
-                generalCargoTypeComboBox.SelectedIndex = mainWindow.generalCargoTypes.IndexOf(cruise.GeneralCargoType);
-                departurePortComboBox.SelectedIndex = mainWindow.ports.IndexOf(cruise.DeparturePort);
-                destinationPortComboBox.SelectedIndex = mainWindow.ports.IndexOf(cruise.DestinationPort);
-                chartererComboBox.SelectedIndex = mainWindow.charterers.IndexOf(cruise.Charterer);
+                shipComboBox.SelectedIndex = mainWindow.ships.IndexOf(mainWindow.ships.Where(ship => ship.Id == cruise.Ship).First());
+                generalCargoTypeComboBox.SelectedIndex = mainWindow.generalCargoTypes.IndexOf(mainWindow.generalCargoTypes.Where(generalCargoType => generalCargoType.Id == cruise.Generalcargotype).First());
+                departurePortComboBox.SelectedIndex = mainWindow.ports.IndexOf(mainWindow.ports.Where(port => port.Id == cruise.Departureport).First());
+                destinationPortComboBox.SelectedIndex = mainWindow.ports.IndexOf(mainWindow.ports.Where(port => port.Id == cruise.Destinationport).First());
+                chartererComboBox.SelectedIndex = mainWindow.charterers.IndexOf(mainWindow.charterers.Where(charterer => charterer.Id == cruise.Charterer).First());
             }
         }
 
@@ -65,31 +66,37 @@ namespace rpbd2.GUI
         {
             if (cruise == null)
             {
-                mainWindow.cruises.Add(new Entities.Cruise());
+                mainWindow.cruises.Add(new Cruise());
                 cruise = mainWindow.cruises.LastOrDefault();
-                DB.getInstance().Save(cruise);
             }
-            cruise.Ship = mainWindow.ships[shipComboBox.SelectedIndex];
-            cruise.GeneralCargoType = mainWindow.generalCargoTypes[shipComboBox.SelectedIndex];
-            cruise.DeparturePort = mainWindow.ports[departurePortComboBox.SelectedIndex];
-            cruise.DestinationPort = mainWindow.ports[destinationPortComboBox.SelectedIndex];
-            cruise.Charterer = mainWindow.charterers[chartererComboBox.SelectedIndex];
+            cruise.Ship = mainWindow.ships[shipComboBox.SelectedIndex].Id;
+            cruise.Generalcargotype = mainWindow.generalCargoTypes[shipComboBox.SelectedIndex].Id;
+            cruise.Departureport = mainWindow.ports[departurePortComboBox.SelectedIndex].Id;
+            cruise.Destinationport = mainWindow.ports[destinationPortComboBox.SelectedIndex].Id;
+            cruise.Charterer = mainWindow.charterers[chartererComboBox.SelectedIndex].Id;
 
-            var db = DB.getInstance();
-            foreach (var portEntry in cruise.PortEntries)
-                db.Delete(portEntry);
-            cruise.PortEntries.Clear();
+
+            foreach (var portEntry in cruise.Portentries)
+            {
+                portEntry.Cruise = 0;
+                mainWindow.portEntriesApi.AddOrUpdatePortEntry(portEntry);
+            }
+            cruise.Portentries.Clear();
+
             for (int i = 0; i < portEntriesGridView.RowCount; i++)
             {
-                cruise.PortEntries.Add(new Entities.PortEntry()
+                var portEntry = new PortEntry()
                 {
-                    Port = (Entities.Port)portEntriesGridView.Rows[i].Cells[0].Value,
-                    DestinationPlanned = (DateTime)portEntriesGridView.Rows[i].Cells[1].Value,
-                    DeparturePlanned = (DateTime)portEntriesGridView.Rows[i].Cells[2].Value,
-                });
+                    Port = ((Port)portEntriesGridView.Rows[i].Cells[0].Value).Id,
+                    Cruise = cruise.Id,
+                    Destinationdateplanned = (DateTime)portEntriesGridView.Rows[i].Cells[1].Value,
+                    Departuredateplanned = (DateTime)portEntriesGridView.Rows[i].Cells[2].Value,
+                };
+                cruise.Portentries.Add(portEntry);
+                mainWindow.portEntriesApi.AddOrUpdatePortEntry(portEntry);
             }
 
-            DB.getInstance().FlushAsync();
+            mainWindow.cruisesApi.AddOrUpdateCruise(cruise);
 
             Close();
         }

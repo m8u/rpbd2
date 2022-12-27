@@ -283,6 +283,7 @@
             this.Column3,
             this.Column4,
             this.Column5});
+            this.cruisesGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.cruisesGridView.Location = new System.Drawing.Point(3, 3);
             this.cruisesGridView.MultiSelect = false;
             this.cruisesGridView.Name = "cruisesGridView";
@@ -335,6 +336,7 @@
             this.flowLayoutPanel1.Controls.Add(this.updateRoutePointButton);
             this.flowLayoutPanel1.Controls.Add(this.editCruiseButton);
             this.flowLayoutPanel1.Controls.Add(this.removeCruiseButton);
+            this.flowLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 357);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -347,8 +349,9 @@
             this.updateRoutePointButton.Name = "updateRoutePointButton";
             this.updateRoutePointButton.Size = new System.Drawing.Size(142, 23);
             this.updateRoutePointButton.TabIndex = 2;
-            this.updateRoutePointButton.Text = "Update route point...";
+            this.updateRoutePointButton.Text = "Update route point";
             this.updateRoutePointButton.UseVisualStyleBackColor = true;
+            this.updateRoutePointButton.Click += new System.EventHandler(this.updateRoutePointButton_Click);
             // 
             // editCruiseButton
             // 
@@ -386,6 +389,7 @@
             this.Column34,
             this.Column35,
             this.Column36});
+            this.routePointsGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.routePointsGridView.Location = new System.Drawing.Point(6, 96);
             this.routePointsGridView.MultiSelect = false;
             this.routePointsGridView.Name = "routePointsGridView";
@@ -458,6 +462,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cruiseShipLabel, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.cruiseGeneralCargoLabel, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.cruiseChartererLabel, 1, 4);
+            this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -621,6 +626,7 @@
             this.Column10,
             this.Column11,
             this.Column38});
+            this.shipsGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.shipsGridView.Location = new System.Drawing.Point(3, 3);
             this.shipsGridView.MultiSelect = false;
             this.shipsGridView.Name = "shipsGridView";
@@ -685,6 +691,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.Controls.Add(this.editShipButton);
             this.flowLayoutPanel2.Controls.Add(this.removeShipButton);
+            this.flowLayoutPanel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 170);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -734,6 +741,7 @@
             this.tableLayoutPanel2.Controls.Add(this.shipCrewLabel, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.shipLocationLabel, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.shipOverhaulStartDateLabel, 1, 7);
+            this.tableLayoutPanel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
@@ -954,6 +962,7 @@
             this.Column17,
             this.Column18,
             this.Column19});
+            this.staffGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.staffGridView.Location = new System.Drawing.Point(3, 3);
             this.staffGridView.MultiSelect = false;
             this.staffGridView.Name = "staffGridView";
@@ -1026,6 +1035,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel3.Controls.Add(this.editMemberButton);
             this.flowLayoutPanel3.Controls.Add(this.removeMemberButton);
+            this.flowLayoutPanel3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 170);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -1075,6 +1085,7 @@
             this.tableLayoutPanel3.Controls.Add(this.memberRoleLabel, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.memberExperienceLabel, 1, 6);
             this.tableLayoutPanel3.Controls.Add(this.memberSalaryLabel, 1, 7);
+            this.tableLayoutPanel3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
@@ -1303,6 +1314,7 @@
             this.Column26,
             this.Column27,
             this.Column28});
+            this.charterersGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.charterersGridView.Location = new System.Drawing.Point(3, 33);
             this.charterersGridView.MultiSelect = false;
             this.charterersGridView.Name = "charterersGridView";
@@ -1382,6 +1394,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel4.Controls.Add(this.editChartererButton);
             this.flowLayoutPanel4.Controls.Add(this.removeChartererButton);
+            this.flowLayoutPanel4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(6, 192);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
@@ -1433,6 +1446,7 @@
             this.tableLayoutPanel4.Controls.Add(this.chartererBankCityLabel, 1, 6);
             this.tableLayoutPanel4.Controls.Add(this.chartererTINLabel, 1, 7);
             this.tableLayoutPanel4.Controls.Add(this.chartererAccountNumberLabel, 1, 8);
+            this.tableLayoutPanel4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 9;
@@ -1631,6 +1645,7 @@
             this.miscGridView.Location = new System.Drawing.Point(6, 35);
             this.miscGridView.Name = "miscGridView";
             this.miscGridView.RowTemplate.Height = 25;
+            this.miscGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.miscGridView.Size = new System.Drawing.Size(327, 473);
             this.miscGridView.TabIndex = 1;
             this.miscGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.miscGridView_CellEndEdit);
